@@ -5,9 +5,9 @@ import { Footer } from './components/Footer'
 import  { Home } from './components/Home'
 import { CatList } from './components/CatList'
 import { CatDetail }from './components/CatDetail'
-import { CatForm } from '../components/CatForm'
-import { CatEditForm } from '../components/CatEditForm'
-import  { CatDeleteForm } from '../components/CatDeleteForm'
+import { CatForm } from './src/CatForm'
+import { CatEditForm } from './components/CatEditForm'
+import  { CatDeleteForm } from './components/CatDeleteForm'
 import { NotFound } from './components/NotFound'
 
 function App() {
