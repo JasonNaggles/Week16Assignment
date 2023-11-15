@@ -1,6 +1,6 @@
 import React from "react";
 
-function Home() {
+export const Home = () => {
   return (
     <div className="container">
       <div className="row">
@@ -15,4 +15,3 @@ function Home() {
   );
 }
 
-export default Home;
