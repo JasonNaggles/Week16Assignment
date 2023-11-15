@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 
-function CatDetail() {
+export const CatDetail = () => {
   const { id } = useParams(); // Get the cat ID from the URL
 
   // Replace this with your cat data retrieval logic
@@ -34,4 +34,3 @@ function CatDetail() {
   );
 }
 
-export default CatDetail;

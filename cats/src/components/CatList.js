@@ -1,6 +1,6 @@
 import React from "react";
 
-function CatList() {
+export const CatList = () => {
   const cats = [
     { id: 1, name: "Whiskers" },
     { id: 2, name: "Fluffy" },
@@ -22,4 +22,4 @@ function CatList() {
   );
 }
 
-export default CatList;
+

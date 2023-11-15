@@ -1,6 +1,6 @@
 import React from "react";
 
-function Footer() {
+export const Footer = () => {
   return (
     <footer className="footer">
       <div className="container text-center">
@@ -9,5 +9,3 @@ function Footer() {
     </footer>
   );
 }
-
-export default Footer;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
 
-function CatEditForm() {
+ export const CatEditForm = () => {
   const { id } = useParams();
   const history = useHistory();
 
@@ -90,4 +90,3 @@ function CatEditForm() {
   );
 }
 
-export default CatEditForm;

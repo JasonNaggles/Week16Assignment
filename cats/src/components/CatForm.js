@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import React, { useState } from "react"
+import { Link, useHistory } from "react-router-dom"
 
-function CatForm() {
+export const CatForm = () =>  {
   const [catData, setCatData] = useState({
     name: "",
     breed: "",
@@ -96,4 +96,4 @@ function CatForm() {
   );
 }
 
-export default CatForm;
+
