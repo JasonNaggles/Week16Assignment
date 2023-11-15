@@ -1,14 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Header from ".Components/Header";
-import Footer from "./Components/Footer";
-import Home from "./Components/Home";
-import CatList from "./Components/CatList";
-import CatDetail from "./Components/CatDetail";
-import CatForm from "./Components/CatForm";
-import CatEditForm from "./Components/CatEditForm";
-import CatDeleteForm from "./Components/CatDeleteForm";
-import NotFound from "./Components/NotFound";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Home from "./components/Home";
+import CatList from "./components/CatList";
+import CatDetail from "./components/CatDetail";
+import CatForm from "./components/CatForm";
+import CatEditForm from "./components/CatEditForm";
+import CatDeleteForm from "./components/CatDeleteForm";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
