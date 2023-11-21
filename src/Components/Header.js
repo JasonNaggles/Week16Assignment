@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const Header = () => {
+export default function Header() {
   return (
     <header className="header">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">

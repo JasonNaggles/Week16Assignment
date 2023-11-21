@@ -1,6 +1,6 @@
 import React from "react";
 
-export const CatList = () => {
+export default function CatList() {
   const cats = [
     { id: 1, name: "Whiskers" },
     { id: 2, name: "Fluffy" },

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
 
-export const CatDeleteForm = () => {
+export default function CatDeleteForm() {
   const { id } = useParams();
   const history = useHistory();
 

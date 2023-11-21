@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const NotFound = () => {
+export default function NotFound() {
   return (
     <div className="container">
       <h2>Page Not Found</h2>

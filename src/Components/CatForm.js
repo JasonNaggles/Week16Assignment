@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Link, useHistory } from "react-router-dom"
 
-export const CatForm = () =>  {
+export default function CatForm() {
   const [catData, setCatData] = useState({
     name: "",
     breed: "",
