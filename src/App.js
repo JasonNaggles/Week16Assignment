@@ -18,12 +18,12 @@ export default function App() {
         <Header />
         <Switch>
           <Route path="/" element={<Home />} />
-          <Route path="/cats" component={CatList} />
-          <Route path="/cats/add" component={CatForm} />
-          <Route path="/cats/:id" component={CatDetail} />
-          <Route path="/cats/:id/edit" component={CatEditForm} />
-          <Route path="/cats/:id/delete" component={CatDeleteForm} />
-          <Route component={NotFound} />
+          <Route path="/cats" component={<CatList />} />
+          <Route path="/cats/add" component={<CatForm />} />
+          <Route path="/cats/:id" component={<CatDetail />} />
+          <Route path="/cats/:id/edit" component={<CatEditForm />} />
+          <Route path="/cats/:id/delete" component={<CatDeleteForm />} />
+          <Route component={<NotFound />} />
         </Switch>
         <Footer />
       </div>
