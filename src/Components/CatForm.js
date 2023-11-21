@@ -1,14 +1,21 @@
-import React, { useState } from "react"
-import { Link, useHistory } from "react-router-dom"
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Link, useHistory } from "react-router-dom";
+import { catOptions } from "../options";
 
 export default function CatForm() {
-  const [catData, setCatData] = useState({
-    name: "",
-    breed: "",
-    age: "",
-    description: "",
-  });
-
+  const [catData, setCatData] = useState(null);
+  const fetchData = () => {
+    axios.get("https://api.thecatapi.com/v1/images/search?limit=10",
+    catOptions
+    ).then((response) => setCatData(response.data))
+    .catch((error) => console.error("error during fetching"));
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
+  
+  console.log(catData);
   const history = useHistory();
 
   const handleChange = (e) => {
@@ -23,7 +30,7 @@ export default function CatForm() {
     e.preventDefault();
 
     // Define the URL for your mock API
-    const apiUrl = "https://api.thecatapi.com/v1/images/search?limit=10&api_key=Lbn7gsdN1cVACzhJ58lHMwy8dN1bMUo9moA9H7KCQtHaN9A8mg5XLbQmY3FHcvBX"; // Replace with your API URL
+    const apiUrl = "https://api.thecatapi.com/v1/images/search?limit=10"; // Replace with your API URL
 
     fetch(apiUrl, {
       method: "POST",
@@ -94,6 +101,7 @@ export default function CatForm() {
       </form>
     </div>
   );
-}
+
+  };
 
 

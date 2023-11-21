@@ -23,7 +23,7 @@ export default function App() {
           <Route path="/cats/:id" component={<CatDetail />} />
           <Route path="/cats/:id/edit" component={<CatEditForm />} />
           <Route path="/cats/:id/delete" component={<CatDeleteForm />} />
-          <Route component={<NotFound />} />
+          <Route path="/" component={<NotFound />} />
         </Switch>
         <Footer />
       </div>
