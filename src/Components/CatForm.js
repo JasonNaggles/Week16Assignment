@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function CatForm() {
-  const [catData, setCatData] = useState(null);
+  const [catData, setCatData] = useState("");
   const fetchData = () => {
-    axios.get("https://api.thecatapi.com/v1/images/search",
+    fetch("https://api.thecatapi.com/v1/images/search?limit=10",
     ).then((response) => setCatData(response.data))
     .catch((error) => console.error("error during fetching"));
   };

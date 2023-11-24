@@ -6,9 +6,6 @@ export default function Header() {
     <header className="header">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container">
-          <Link to="/" className="navbar-brand">
-            Cat CRUD App
-          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -30,6 +27,31 @@ export default function Header() {
               <li className="nav-item">
                 <Link to="/cats" className="nav-link">
                   Cats
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/cats/add" className="nav-link">
+                  CatForm
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/cats/:id" className="nav-link">
+                  CatDetail
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/cats/:id/edit" className="nav-link">
+                  CatEditForm
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/cats/:id/delete" className="nav-link">
+                  CatDeleteForm
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/" className="nav-link">
+                  NotFound
                 </Link>
               </li>
             </ul>
