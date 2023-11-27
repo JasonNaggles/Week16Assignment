@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 export default function CatForm() {
   
-  const apiUrl = "https://api.thecatapi.com/v1/images/search";
+  const apiUrl = "https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=beng";
   const apiKey = "live_Lbn7gsdN1cVACzhJ58lHMwy8dN1bMUo9moA9H7KCQtHaN9A8mg5XLbQmY3FHcvBX";
   
   const [cats, setCats ] = useState({});
-  const requestCatForm = async () => {
+  const CatForm = async () => {
     const headers = {
       "Content-Type": "application/json",
       "x-api-key": apiKey,
@@ -20,7 +20,7 @@ export default function CatForm() {
     
   
   useEffect(() => {
-    requestCatForm();
+    CatForm();
   }, []);
 
 

@@ -25,11 +25,6 @@ export default function Header() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/cats" className="nav-link">
-                  Cats
-                </Link>
-              </li>
-              <li className="nav-item">
                 <Link to="/cats/add" className="nav-link">
                   CatForm
                 </Link>
