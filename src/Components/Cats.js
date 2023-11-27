@@ -11,15 +11,35 @@ export default function Cats() {
         "Content-Type": "application/json",
         "x-api-key": apiKey,
       };
+
+      try {
       const apiResponse = await fetch(apiUrl, {headers});
       const jsonResult = await apiResponse.json();
-      consone.log(jsonResult);
+      console.log(jsonResult);
       setCats(jsonResult);
+      } catch (error) {
+        console.log.error(error.message)
+      }
+      
     } 
       
     
     useEffect(() => {
       requestCats();
     }, []);
+
+
+    return (
+        <div className="container">
+      <h2>Cats List</h2>
+      <ul>
+        {cats.map((cat) => (
+          <li key={cat.id}>
+            <a href={`/cats/${cat.id}`}>{cat.name}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 
 }
