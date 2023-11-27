@@ -18,12 +18,10 @@ export default function CatForm() {
     setCats(jsonResult);
   } 
     
-  };
-  useEffect(() => {
-    fetchData();
-  }, []);
   
-  console.log(fetchData);
+  useEffect(() => {
+    requestCatForm();
+  }, []);
 
 
   return (
@@ -75,6 +73,5 @@ export default function CatForm() {
     </div>
   );
 
-  
-
+  };
 
