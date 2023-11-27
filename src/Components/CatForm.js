@@ -2,17 +2,28 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function CatForm() {
-  const [catData, setCatData] = useState("");
-  const fetchData = () => {
-    fetch("https://api.thecatapi.com/v1/images/search?limit=10",
-    ).then((response) => setCatData(response.data))
-    .catch((error) => console.error("error during fetching"));
+  
+  const apiUrl = "https://api.thecatapi.com/v1/images/search";
+  const apiKey = "live_Lbn7gsdN1cVACzhJ58lHMwy8dN1bMUo9moA9H7KCQtHaN9A8mg5XLbQmY3FHcvBX";
+  
+  const [cats, setCats ] = useState({});
+  const requestCatForm = async () => {
+    const headers = {
+      "Content-Type": "application/json",
+      "x-api-key": apiKey,
+    };
+    const apiResponse = await fetch(apiUrl, {headers});
+    const jsonResult = await apiResponse.json();
+    consone.log(jsonResult);
+    setCats(jsonResult);
+  } 
+    
   };
   useEffect(() => {
     fetchData();
   }, []);
   
-  console.log(catData);
+  console.log(fetchData);
 
 
   return (
@@ -64,6 +75,6 @@ export default function CatForm() {
     </div>
   );
 
-  };
+  
 
 
