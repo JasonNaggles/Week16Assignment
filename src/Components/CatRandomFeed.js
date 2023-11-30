@@ -13,5 +13,9 @@ const Feed = () => {
             const json = await response.json();
             setImages(json);
         }
+     catch (e){
+        console.log(e)
     }       
+}
+
 }
