@@ -2,29 +2,20 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function CatForm() {
-  
-  const apiUrl = "https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=beng";
-  const apiKey = "live_Lbn7gsdN1cVACzhJ58lHMwy8dN1bMUo9moA9H7KCQtHaN9A8mg5XLbQmY3FHcvBX";
-  
-  const [cats, setCats ] = useState([]);
-
-
-
-
-  const CatForm = async () => {
-    const headers = {
-      "Content-Type": "application/json",
-      "x-api-key": apiKey,
-    };
-    const apiResponse = await fetch(apiUrl, {headers});
-    const jsonResult = await apiResponse.json();
-    consone.log(jsonResult);
-    setCats(jsonResult);
-  } 
-    
+  const [cats, setCats ] = useState([])
   
   useEffect(() => {
-    CatForm();
+    const fetchCatData = async () => {
+      try {
+        const res = await fetch("https://api.thecatapi.com/v1/images/search?limit=10")
+        const data = await res.json()
+        setCats(data)
+        console.log(data)
+      } catch (error) {
+        console.error(error)
+      }
+  } 
+    fetchCatData()
   }, []);
 
 
