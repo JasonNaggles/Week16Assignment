@@ -20,6 +20,7 @@ export default function App() {
         <Header />
         <Switch>
           <Route path="/" component={Home} exact />
+          <Route path="cats/feed" component={CatRandomFeed} />
           <Route path="/cats" component={CatList} />
           <Route path="/cats/add" component={CatForm} />
           <Route path="/cats/:id" component={CatDetail} />
