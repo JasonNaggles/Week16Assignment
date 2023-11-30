@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import { Card, Col, Container, Row } from "react-bootstrap";
 export default function Cats() {
 
     const apiUrl = "https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=beng";
@@ -30,16 +30,23 @@ export default function Cats() {
 
 
     return (
-        <div className="container">
-      <h2>Cats List</h2>
-      <ul>
-        {cats.map((cat) => (
-          <li key={cat.id}>
-            <a href={`/cats/${cat.id}`}>{cat.name}</a>
-          </li>
-        ))}
-      </ul>
-    </div>
+        <>
+        <Container>
+            <Row className="justified-content-center">
+            {Object.values(cats).map(cat => (
+            <Col key={cat.id}>
+                <Card>
+                    <Card.Body>
+                        <Card.Title>{cat.name}</Card.Title>
+                        <p>{cat.description}</p>
+                        <Card.Img src={cat.url} />
+                    </Card.Body>
+                </Card>
+            </Col>
+            ))}
+            </Row>
+        </Container>
+        </>
   );
 
 }
