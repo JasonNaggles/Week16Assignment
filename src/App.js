@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Home from "./Components/Home";
+import CatRandomFeed from "./Components/CatRandomFeed";
 import CatList from "./Components/CatList";
 import CatDetail from "./Components/CatDetail";
 import CatForm from "./Components/CatForm";

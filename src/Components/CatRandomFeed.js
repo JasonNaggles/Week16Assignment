@@ -1,7 +1,6 @@
-import { Grid } from "@mui/material";
 import React from "react";
 
-const Feed = () => {
+export default function CatRandomFeed () {
     
     const [images, setImages] = React.useState([]);
 
@@ -25,7 +24,13 @@ const Feed = () => {
 
 return (
     <Grid container columns={{xs:4 , sm:8, md:12}}>
+        {
+            images && images.map(image => (
+                <Image data={image} key={image.id}/>
+            ))
+        }
     <h1>CatRandomFeed</h1>
     </Grid>
 );
+
 }
