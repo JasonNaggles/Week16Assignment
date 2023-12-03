@@ -12,36 +12,8 @@ import NotFound from "./Components/NotFound";
 import { BrowserRouter } from "react-router-dom";
 
 
-
-
 export default function App() {
-const API_URL = "https://dog.ceo/api/breeds/image/random";
-
-const get = async () => {
-  try {
-    const response = await fetch(API_URL);
-    const data = await response.json();
-    return data;
-  } catch(e) {
-    console.log('Oops, looks like fetchDog had an issue.', e);
-}
-}
-
-const put = async (dog) => {
-  try {
-  const response = await fetch (`${API_URL}/${dog._id}`, {
-      method: 'PUT',
-      headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(dog)
-  });
-return await response.json();  
-} catch(e) {
-  console.log('Oops, looks like fetchDog had an issue.', e);
-}
-
-} 
+ 
 
 
 
