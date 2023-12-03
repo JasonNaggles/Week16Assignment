@@ -4,12 +4,12 @@ import { Switch, Route } from "react-router-dom";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Home from "./Components/Home";
-import Cat from "./Components/Cat";
-import CatList from "./Components/CatList";
-import CatDetail from "./Components/CatDetail";
-import CatForm from "./Components/Cat";
-import CatEditForm from "./Components/CatEditForm";
-import CatDeleteForm from "./Components/CatDeleteForm";
+import Cat from "./Components/Dog";
+import CatList from "./Components/DogList";
+import CatDetail from "./Components/DogDetail";
+import CatForm from "./Components/Dog";
+import CatEditForm from "./Components/DogEditForm";
+import CatDeleteForm from "./Components/DogDeleteForm";
 import NotFound from "./Components/NotFound";
 import { BrowserRouter } from "react-router-dom";
 
