@@ -36,12 +36,12 @@ export default function Header() {
               </li>
               <li className="nav-item">
                 <Link to="/dogs/:id/edit" className="nav-link">
-                  CatEditForm
+                  DogEditForm
                 </Link>
               </li>
               <li className="nav-item">
                 <Link to="/dogs/:id/delete" className="nav-link">
-                  CatDeleteForm
+                  DogDeleteForm
                 </Link>
               </li>
               <li className="nav-item">
