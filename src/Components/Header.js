@@ -25,22 +25,22 @@ export default function Header() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/cats/add" className="nav-link">
-                  CatForm
+                <Link to="/dogs/add" className="nav-link">
+                  Dog
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/cats/:id" className="nav-link">
-                  CatDetail
+                <Link to="/dogs/:id" className="nav-link">
+                  DogDetail
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/cats/:id/edit" className="nav-link">
+                <Link to="/dogs/:id/edit" className="nav-link">
                   CatEditForm
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/cats/:id/delete" className="nav-link">
+                <Link to="/dogs/:id/delete" className="nav-link">
                   CatDeleteForm
                 </Link>
               </li>

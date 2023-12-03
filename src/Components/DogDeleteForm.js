@@ -1,42 +1,35 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
 
-export default function CatDeleteForm() {
+export default function DogDeleteForm() {
   const { id } = useParams();
   const history = useHistory();
 
-  const [catData, setCatData] = useState(null);
+  const [dogData, setDogData] = useState(null);
 
   useEffect(() => {
-    // Replace this with your data retrieval logic to get the cat's data by ID
-    // Example data for demonstration purposes:
-    const fetchedCat = {
-      name: "Fluffy",
-      breed: "Persian",
-      age: 3,
-      description: "A cute and fluffy Persian cat.",
-    };
+    
 
-    setCatData(fetchedCat);
+    setDogData(fetchedDog);
   }, [id]);
 
   const handleDelete = () => {
     // Handle cat deletion here (e.g., delete cat data from your database)
     // After successful deletion, you can redirect to the cat list page
-    history.push("/cats");
+    history.push("/dogs");
   };
 
   return (
     <div className="container">
-      <h2>Delete Cat</h2>
+      <h2>Delete Dog</h2>
       {catData ? (
         <div>
-          <p>Are you sure you want to delete the cat "{catData.name}"?</p>
+          <p>Are you sure you want to delete the dog "{dogData.name}"?</p>
           <button onClick={handleDelete}>Yes, Delete</button>
-          <Link to={`/cats/${id}`}>Cancel</Link>
+          <Link to={`/dogs/${id}`}>Cancel</Link>
         </div>
       ) : (
-        <p>Cat not found</p>
+        <p>Dog  not found</p>
       )}
     </div>
   );
