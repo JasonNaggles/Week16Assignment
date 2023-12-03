@@ -30,11 +30,6 @@ export default function Header() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="cats/feed" className="nav-link">
-                  Cat Feed
-                </Link>
-              </li>
-              <li className="nav-item">
                 <Link to="/cats/:id" className="nav-link">
                   CatDetail
                 </Link>

@@ -4,7 +4,6 @@ import { Switch, Route } from "react-router-dom";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Home from "./Components/Home";
-import CatRandomFeed from "./Components/CatRandomFeed";
 import CatList from "./Components/CatList";
 import CatDetail from "./Components/CatDetail";
 import CatForm from "./Components/CatForm";
@@ -14,13 +13,13 @@ import NotFound from "./Components/NotFound";
 import { BrowserRouter } from "react-router-dom";
 
 export default function App() {
+
   return (
   <BrowserRouter>
       <div className="App">
         <Header />
         <Switch>
           <Route path="/" component={Home} exact />
-          <Route path="cats/feed" component={CatRandomFeed} />
           <Route path="/cats" component={CatList} />
           <Route path="/cats/add" component={CatForm} />
           <Route path="/cats/:id" component={CatDetail} />
