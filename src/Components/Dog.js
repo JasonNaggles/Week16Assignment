@@ -1,26 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-export default function Cat() {
+export default function Dog() {
   
-  const [cat, setCats ] = useState([null]);
+  const [dog, setDogs ] = useState([null]);
   const history = useHistory();
   
   useEffect(() => {
-    const getCats = async () => {
-        const response = await axios.get('https://api.thecatapi.com/v1/images/search',
+    const getDogs = async () => {
+        const response = await axios.get('https://dog.ceo/api/breeds/image/random',
       );
         console.log(response);
-        setCats(response.data.message);
+        setDogs(response.data.message);
   };
-    getCats();
+    getDogs();
   }, []);
 
 
   return (
     <div>
-      <h1>Cats </h1>
-      <img alt="picture of a cat" src={cat} onClick={() => history.push("/")} />
+      <h1>Dogs </h1>
+      <img alt="picture of a dog" src={dog} onClick={() => history.push("/")} />
     </div>
 
 
