@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-export default function CatForm() {
+export default function Cat() {
   
   const [cat, setCats ] = useState([null]);
   const history = useHistory();
@@ -9,7 +9,6 @@ export default function CatForm() {
   useEffect(() => {
     const getCats = async () => {
         const response = await axios.get('https://api.thecatapi.com/v1/images/search',
-         
       );
         console.log(response);
         setCats(response.data.message);
