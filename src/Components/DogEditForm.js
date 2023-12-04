@@ -12,7 +12,7 @@ import { Link, useHistory, useParams } from "react-router-dom";
   });
 
   useEffect(() => {
-    // Replace this with your data retrieval logic to get the cat's data by ID
+    // Replace this with your data retrieval logic to get the dog's data by ID
     // Example data for demonstration purposes:
     const fetchedDog = {
       message: "https://images.dog.ceo/breeds/setter-gordon/n02101006_1205.jpg",
