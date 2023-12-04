@@ -1,55 +1,52 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
 
- export default function CatEditForm() {
-  const { id } = useParams();
+ export default function DogEditForm() {
+  const {} = useParams();
   const history = useHistory();
 
-  const [catData, setCatData] = useState({
-    name: "",
-    breed: "",
-    age: "",
-    description: "",
+  const [dogData, setDogData] = useState({
+    message: "",
+    status: "",
+    
   });
 
   useEffect(() => {
     // Replace this with your data retrieval logic to get the cat's data by ID
     // Example data for demonstration purposes:
-    const fetchedCat = {
-      name: "Fluffy",
-      breed: "Persian",
-      age: 3,
-      description: "A cute and fluffy Persian cat.",
+    const fetchedDog = {
+      message: "https://images.dog.ceo/breeds/setter-gordon/n02101006_1205.jpg",
+      status: "Success",
     };
 
-    setCatData(fetchedCat);
-  }, [id]);
+    setDogData(fetchedDog);
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setCatData({
-      ...catData,
+    setDogData({
+      ...dogData,
       [name]: value,
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here (e.g., update cat data in your database)
-    // After successful submission, you can redirect to the cat detail page
-    history.push(`/cats/${id}`);
+    // Handle form submission here (e.g., update dog data in your database)
+    // After successful submission, you can redirect to the dog detail page
+    history.push(`/dogs/${id}`);
   };
 
   return (
     <div className="container">
-      <h2>Edit Cat</h2>
+      <h2>Edit Dog</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Name:</label>
           <input
             type="text"
             name="name"
-            value={catData.name}
+            value={dogData.name}
             onChange={handleChange}
             required
           />
@@ -59,7 +56,7 @@ import { Link, useHistory, useParams } from "react-router-dom";
           <input
             type="text"
             name="breed"
-            value={catData.breed}
+            value={dogData.breed}
             onChange={handleChange}
             required
           />
@@ -69,7 +66,7 @@ import { Link, useHistory, useParams } from "react-router-dom";
           <input
             type="number"
             name="age"
-            value={catData.age}
+            value={dogData.age}
             onChange={handleChange}
             required
           />
@@ -78,13 +75,13 @@ import { Link, useHistory, useParams } from "react-router-dom";
           <label>Description:</label>
           <textarea
             name="description"
-            value={catData.description}
+            value={dogData.description}
             onChange={handleChange}
             required
           ></textarea>
         </div>
-        <button type="submit">Update Cat</button>
-        <Link to={`/cats/${id}`}>Cancel</Link>
+        <button type="submit">Update Dog</button>
+        <Link to={`/dogs/edit`}>Cancel</Link>
       </form>
     </div>
   );
