@@ -81,7 +81,7 @@ import { Link, useHistory, useParams } from "react-router-dom";
           ></textarea>
         </div>
         <button type="submit">Update Dog</button>
-        <Link to={`/dogs/edit`}>Cancel</Link>
+        <Link to={`/`}>Cancel</Link>
       </form>
     </div>
   );
