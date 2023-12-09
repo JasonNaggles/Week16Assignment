@@ -1,6 +1,5 @@
 import React from "react";
-import "/node_modules/bootstrap/dist/css/bootstrap.min.css";
-import { Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import Home from "./Components/Home";
@@ -9,7 +8,6 @@ import DogDetail from "./Components/DogDetail";
 import DogEditForm from "./Components/DogEditForm";
 import DogDeleteForm from "./Components/DogDeleteForm";
 import NotFound from "./Components/NotFound";
-import { BrowserRouter } from "react-router-dom";
 
 
 export default function App() {
