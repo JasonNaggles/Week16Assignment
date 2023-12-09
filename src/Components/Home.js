@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 export default function Home() {
 
   const [dogs, setDogs ] = useState([]);
@@ -27,12 +27,21 @@ export default function Home() {
       <>
       <section className="p-8 max-w-6xl mx-auto">
         <div className="text-center">
-      <h1 className="flex items-center justify-center text-slate-800 text-center px-5 text-3xl font-bold lg:text-5xl">The Dog App</h1>
-      <p className="my-8">This application is powered by{" "} <a href="https://thedogapi.com" className="text-indigo-600 underline active:text-orange-400">The Dog API</a></p>
-      <form>
+      <h1 className="flex items-center justify-center text-white text-center px-5 text-3xl font-bold lg:text-5xl">The Dog App</h1>
+      <p className="my-8 text-white">This application is powered by{" "} <a href="https://thedogapi.com" className="text-indigo-600 underline active:text-orange-400">The Dog API</a></p>
+      <form className="max-w-xl mx-auto" autoComplete="off">
         <input type="text" name="search" id="search" placeholder="Search for a dog / breed"
-        classname="bg-rose-400 py-2 px-4 rounded shadow w-full" />
+        className="py-2 px-4 rounded shadow w-full bg-slate-400 text-white placeholder-white" />
       </form>
+      </div>
+      <div>
+      {dogs.map((dog) => (
+        <article key={dog.id}>
+          <img src={`https://cdn2.thedogapi.com/images/${dog.reference_image_id}.jpg`} alt={dog.name} />
+          <h3>{dog.name}</h3>
+          <p>Bred For: {dog.bred_for}</p>
+        </article>
+      ))}
       </div>
       </section>
       </>
