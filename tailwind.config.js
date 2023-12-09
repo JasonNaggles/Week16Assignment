@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
+  presets: [
+    require('@acmecorp/tailwind-colors'),
+    require('@acmecorp/tailwind-fonts'),
+    require('@acmecorp/tailwind-spacing'),
+  ]
 }
-
