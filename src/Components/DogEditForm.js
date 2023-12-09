@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
-
  export default function DogEditForm() {
   const {} = useParams();
   const history = useHistory();
+  const [error, setError] = useState(false);
 
-  const [dogData, setDogData] = useState({
-    message: "",
-    status: "",
-    
-  });
+  const [dogData, setDogData] = useState({});
 
   useEffect(() => {
     // Replace this with your data retrieval logic to get the dog's data by ID

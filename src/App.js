@@ -1,5 +1,5 @@
 import React from "react";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "/node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { Switch, Route } from "react-router-dom";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
