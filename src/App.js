@@ -20,7 +20,7 @@ export default function App() {
         <Switch>
           <Route path="/" component={Home} exact />
           <Route path="/dogs/add" component={Dogs} />
-          <Route path="/dogs/dog" component={DogDetail} />
+          <Route path="/dogs/:name" component={DogDetail} />
           <Route path="/dogs/edit" component={DogEditForm} />
           <Route path="/dogs/delete" component={DogDeleteForm} />
           <Route path="/" component={NotFound} />

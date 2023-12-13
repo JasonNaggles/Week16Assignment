@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 export default function DogDetail() {
-  const { name } = useParams(); // Get the dog from the URL 
-  const [ dog, setDog ] = useState(null);
+  const [ dog, setDog ] = useState([]);
+  const { name } = useParams();
   
   
   useEffect(() => {
@@ -11,7 +11,7 @@ export default function DogDetail() {
     try {
       // Make an API call or fetch data based on the name parameter
       const response = await fetch(`https://api.thedogapi.com/v1/breeds/search?q=${name}`);
-      const data = response.json();
+      const data = await response.json();
         setDog(data);
         console.log(data);
       } catch (error) {
@@ -29,7 +29,7 @@ export default function DogDetail() {
       {dog.map((item) => (
         <div key={item.id}>
           <article>
-            <img src={`https://cdn2.thedogapi.com/images/${item.reference_image_id}.jpg`} alt={dog.name} />
+            <img src={`https://cdn2.thedogapi.com/images${item.reference_image_id}.jpg`} alt={dog.name} />
           </article>
           <article>
             <h1>{item.name}</h1>

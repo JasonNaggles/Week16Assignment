@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 export default function Dogs() {
   
-  const [dogs, setDogs ] = useState([]);
+  const [dogs, setDogs ] = useState();
   const [error, setError] = useState(false);
   const history = useHistory();
   
   useEffect(() => {
     const getDogs = async () => {
       try {
-        const response = await fetch('https://api.thedogapi.com/v1/images/search?limit=10');
+        const response = await fetch('https://api.thedogapi.com/v1/images/search');
         console.log(response);
         setDogs(response.data.message);
       } catch (error) {
