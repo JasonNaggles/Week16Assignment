@@ -32,9 +32,9 @@ export default function DogDetail() {
             <img src={`https://cdn2.thedogapi.com/images/${item.reference_image_id}.jpg`} alt={dog.name} />
           </article>
           <article>
-            <h1>{item.name}</h1>
-            {item.description && <p>{item.description}</p>}
-            <ul>
+            <h1 className="text-3xl font-bold text-white mb-8 lg:text-5xl">{item.name}</h1>
+            {item.description && <p className="text-slate-400 mb-8 text-sm lg:text-base leading-loose lg:leading-relaxed">{item.description}</p>}
+            <ul className="text-sm text-slate-400 leading-loose lg:text-base lg:leading-relaxed">
               <li>Bred For: {item.bred_for}</li>
               <li>Height: {item.height.metric} cm</li>
               <li>Weight: {item.weight.metric} kgs</li>
@@ -42,10 +42,10 @@ export default function DogDetail() {
               <li>Lifespan: {item.life_span}</li>
               <li>Temperament: {item.temperament}</li>
             </ul>
+            <Link to="/" className="inline-block bg-slate-600 py-2 px-6 rounded mt-8">&larr; Back</Link>
           </article>
         </div>
       ))}
-      <h1 classname="text-white text-3xl">{name}</h1>
     </section>
     </>
   );
