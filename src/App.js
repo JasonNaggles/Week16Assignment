@@ -19,10 +19,10 @@ export default function App() {
         <Header />
         <Switch>
           <Route path="/" component={Home} exact />
-          <Route path="/dogs/add" component={Dogs} />
-          <Route path="/dogs/:name" component={DogDetail} />
-          <Route path="/dogs/edit" component={DogEditForm} />
-          <Route path="/dogs/delete" component={DogDeleteForm} />
+          <Route path="/add" component={Dogs} />
+          <Route path="/:name" component={DogDetail} />
+          <Route path="/edit" component={DogEditForm} />
+          <Route path="/delete" component={DogDeleteForm} />
           <Route path="/" component={NotFound} />
         </Switch>
         <Footer />

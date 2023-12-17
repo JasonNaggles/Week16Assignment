@@ -29,7 +29,7 @@ export default function DogDetail() {
       {dog.map((item) => (
         <div key={item.id}>
           <article>
-            <img src={`https://cdn2.thedogapi.com/images${item.reference_image_id}.jpg`} alt={dog.name} />
+            <img src={`https://cdn2.thedogapi.com/images/${item.reference_image_id}.jpg`} alt={dog.name} />
           </article>
           <article>
             <h1>{item.name}</h1>
