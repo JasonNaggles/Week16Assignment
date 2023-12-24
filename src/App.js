@@ -23,7 +23,7 @@ export default function App() {
           <Route path="/:name" component={DogDetail} />
           <Route path="/edit" component={DogEditForm} />
           <Route path="/delete" component={DogDeleteForm} />
-          <Route path="/" component={NotFound} />
+          <Route path="/notfound" component={NotFound} />
         </Switch>
         <Footer />
       </div>

@@ -9,7 +9,7 @@ export default function DogDeleteForm() {
 
   useEffect(() => {
     const fetchedDog = {
-      message: "https://api.thedogapi.com/v1/breeds",
+      message: "https://api.thedogapi.com/v1/images/search",
       status: "Success",
     };
     

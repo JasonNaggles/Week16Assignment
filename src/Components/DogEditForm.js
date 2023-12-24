@@ -13,12 +13,19 @@ export default function DogEditForm() {
     temperament: ''
   });
 
+  // Function to handle changes in form inputs
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setDogData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  // Fetch dog data when the component mounts
   useEffect(() => {
-    // Simulating fetching dog data based on the ID (Replace with actual API call)
     const fetchDogData = async () => {
       try {
-        // Fetch dog data using the ID from your database or API
-        // For demonstration purposes, using sample data
         const response = await fetch(`https://cdn2.thedogapi.com/images/${dog.reference_image_id}.jpg`);
         if (response.ok) {
           const data = await response.json();
@@ -35,23 +42,24 @@ export default function DogEditForm() {
     fetchDogData(); // Fetch dog data when the component mounts
   }, [id]);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setDogData({ ...dogData, [name]: value });
-  };
-
+  // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Submit updated dog data to your backend (Replace with your logic)
-      await fetch(`https://cdn2.thedogapi.com/images/${dog.reference_image_id}.jpg`, {
+      const response = await fetch(`https://cdn2.thedogapi.com/images/${dog.reference_image_id}.jpg`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(dogData)
+        body: JSON.stringify(dogData),
       });
-      history.push(`/dogs/${id}`); // Redirect to dog detail page after successful update
+
+      if (response.ok) {
+        // Redirect to dog detail page after successful update
+        history.push(`/dogs/${id}`); // Redirect to the dog detail page
+      } else {
+        throw new Error('Failed to update data');
+      }
     } catch (error) {
       console.error('Error updating dog data:', error);
       // Handle error, set an error state, or display an error message
@@ -62,66 +70,21 @@ export default function DogEditForm() {
     <div className="container">
       <h2>Edit Dog</h2>
       <form onSubmit={handleSubmit}>
+        {/* Input fields for dog data */}
         <div className="form-group">
           <label>Bred For:</label>
           <input
             type="text"
-            name="bred for"
+            name="bred_for"
             value={dogData.bred_for}
             onChange={handleChange}
             required
           />
         </div>
-        <div className="form-group">
-          <label>Height:</label>
-          <input
-            type="text"
-            name="height"
-            value={dogData.height}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label>Weight:</label>
-          <input
-            type="text"
-            name="weight"
-            value={dogData.weight}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label>Breed Group:</label>
-          <input
-            name="text"
-            value={dogData.breed_group}
-            onChange={handleChange}
-            required
-           />
-        </div>
-        <div className="form-group">
-          <label>Lifespan:</label>
-          <input
-            name="number"
-            value={dogData.lifespan}
-            onChange={handleChange}
-            required
-           />
-        </div>
-        <div className="form-group">
-          <label>Temperament:</label>
-          <input
-            name="text"
-            value={dogData.temperament}
-            onChange={handleChange}
-            required
-           />
-        </div>
+        {/* Add similar input fields for other attributes */}
+        
         <button type="submit">Update Dog</button>
       </form>
     </div>
   );
-};
-
+}
