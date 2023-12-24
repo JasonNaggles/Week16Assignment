@@ -26,7 +26,7 @@ export default function DogEditForm() {
   useEffect(() => {
     const fetchDogData = async () => {
       try {
-        const response = await fetch(`https://cdn2.thedogapi.com/images/${dog.reference_image_id}.jpg`);
+        const response = await fetch(`https://api.thedogapi.com/v1/breeds`);
         if (response.ok) {
           const data = await response.json();
           setDogData(data); // Update dogData state with fetched data
@@ -46,7 +46,7 @@ export default function DogEditForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`https://cdn2.thedogapi.com/images/${dog.reference_image_id}.jpg`, {
+      const response = await fetch(`https://api.thedogapi.com/v1/breeds`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
