@@ -30,7 +30,7 @@ export default function DogDeleteForm() {
         <div>
           <p>Are you sure you want to delete the dog "{dogData.name}"?</p>
           <button onClick={handleDelete}>Yes, Delete</button>
-          <Link to={`/dogs`}>Cancel</Link>
+          <Link to={`/`}>Cancel</Link>
         </div>
       ) : (
         <p>Dog  not found</p>

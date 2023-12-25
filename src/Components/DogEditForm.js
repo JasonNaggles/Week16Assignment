@@ -29,7 +29,7 @@ export default function DogEditForm() {
         const response = await fetch(`https://api.thedogapi.com/v1/breeds`);
         if (response.ok) {
           const data = await response.json();
-          setDogData(data); // Update dogData state with fetched data
+          setDogData(dogData);
         } else {
           throw new Error('Failed to fetch data');
         }
@@ -68,21 +68,76 @@ export default function DogEditForm() {
 
   return (
     <div className="container">
-      <h2>Edit Dog</h2>
+      <h2 className="flex items-center justify-center text-white text-center px-5 text-3xl font-bold lg:text-5xl">Edit Dog</h2>
       <form onSubmit={handleSubmit}>
         {/* Input fields for dog data */}
         <div className="form-group">
-          <label>Bred For:</label>
+          <label className="flex items-center justify-center text-white text-center px-5 text-3xl font-bold lg:text-5xl">Bred For:</label>
           <input
             type="text"
             name="bred_for"
             value={dogData.bred_for}
             onChange={handleChange}
             required
+            className="block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
           />
         </div>
         {/* Add similar input fields for other attributes */}
-        
+        <div className="form-group">
+          <label className="flex items-center justify-center text-white text-center px-5 text-3xl font-bold lg:text-5xl">Height:</label>
+          <input
+            type="text"
+            name="height"
+            value={dogData.height}
+            onChange={handleChange}
+            required
+            className="block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+          />
+        </div>
+        <div className="form-group">
+          <label className="flex items-center justify-center text-white text-center px-5 text-3xl font-bold lg:text-5xl">Weight:</label>
+          <input
+            type="text"
+            name="weight"
+            value={dogData.weight}
+            onChange={handleChange}
+            required
+            className="block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+          />
+        </div>
+        <div className="form-group">
+          <label className="flex items-center justify-center text-white text-center px-5 text-3xl font-bold lg:text-5xl">Breed Group:</label>
+          <input
+            type="text"
+            name="breed_group"
+            value={dogData.breed_group}
+            onChange={handleChange}
+            required
+            className="block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+          />
+        </div>
+        <div className="form-group">
+          <label className="flex items-center justify-center text-white text-center px-5 text-3xl font-bold lg:text-5xl">Lifespan:</label>
+          <input
+            type="text"
+            name="lifespan"
+            value={dogData.lifespan}
+            onChange={handleChange}
+            required
+            className="block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+          />
+        </div>
+        <div className="form-group">
+          <label className="flex items-center justify-center text-white text-center px-5 text-3xl font-bold lg:text-5xl">Temperament:</label>
+          <input
+            type="text"
+            name="temperament"
+            value={dogData.temperament}
+            onChange={handleChange}
+            required
+            className="block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+          />
+        </div>
         <button type="submit">Update Dog</button>
       </form>
     </div>
