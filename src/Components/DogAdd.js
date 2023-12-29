@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
-export default function Dogs() {
+export default function DogAdd() {
   const [dogs, setDogs] = useState([]);
   const [error, setError] = useState(false);
   const history = useHistory();
