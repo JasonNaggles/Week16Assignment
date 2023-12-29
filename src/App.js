@@ -9,7 +9,7 @@ import DogDetail from "./Components/DogDetail";
 import DogEditForm from "./Components/DogEditForm";
 import DogDeleteForm from "./Components/DogDeleteForm";
 import NotFound from "./Components/NotFound";
-import DogAdd from "./Components/DogAdd";
+
 
 
 export default function App() {
@@ -21,7 +21,7 @@ export default function App() {
         <Switch>
           <Route path="/" component={Home} exact />
           <Route path="/add" component={DogAdd} />
-          <Route path="/detail" component={DogDetail} />
+          <Route path="/:detail" component={DogDetail} />
           <Route path="/edit" component={DogEditForm} />
           <Route path="/delete" component={DogDeleteForm} />
           <Route path="/notfound" component={NotFound} />

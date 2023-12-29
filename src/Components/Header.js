@@ -30,7 +30,7 @@ export default function Header() {
             </li>
             {/* Replace `/:name` with a specific route path */}
             <li className="nav-item">
-              <Link to="/details" className="text-gray-600 hover:text-gray-900">
+              <Link to="/detail" className="text-gray-600 hover:text-gray-900">
                 DogDetail
               </Link>
             </li>

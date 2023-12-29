@@ -7,10 +7,10 @@ export default function DogDetail() {
   
   useEffect(() => {
   // Assuming you fetch the dog data using an API call or from a database
-  const fetchDogData = async () => {
+  const getDogData = async () => {
     try {
-      // Make an API call or fetch data based on the name parameter
-      const response = await fetch(`https://api.thedogapi.com/v1/breeds/search?q=${detail}`);
+      // Make an API call or fetch data based on the detail parameter
+      const response = await fetch(`https://api.thedogapi.com/v1/breeds/search?q=${name}`);
       const data = await response.json();
         setDog(data);
         console.log(data);
@@ -19,7 +19,7 @@ export default function DogDetail() {
       }
   };
 
-  fetchDogData();
+  getDogData();
 }, [name]);
 
 
@@ -29,7 +29,7 @@ export default function DogDetail() {
       {dog.map((item) => (
         <div key={item.id}>
           <article>
-            <img src={`https://cdn2.thedogapi.com/images/${item.reference_image_id}.jpg`} alt={dog.detail} />
+            <img src={`https://cdn2.thedogapi.com/images/${item.reference_image_id}.jpg`} alt={dog.name} />
           </article>
           <article>
             <h1 className="text-3xl font-bold text-white mb-8 lg:text-5xl">{item.name}</h1>
