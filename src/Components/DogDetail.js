@@ -9,7 +9,7 @@ export default function DogDetail() {
   // Assuming you fetch the dog data using an API call or from a database
   const getDogData = async () => {
     try {
-      // Make an API call or fetch data based on the detail parameter
+      // Make an API call or fetch data based on name parameter
       const response = await fetch(`https://api.thedogapi.com/v1/breeds/search?q=${name}`);
       const data = await response.json();
         setDog(data);
@@ -20,14 +20,14 @@ export default function DogDetail() {
   };
 
   getDogData();
-}, [name]);
+}, []);
 
 
   return (
     <>
     <section className="max-w-5xl mx-auto">
-      {dog.map((item) => (
-        <div key={item.id}>
+      {dog.map((item, index) => (
+        <div key={index}>
           <article>
             <img src={`https://cdn2.thedogapi.com/images/${item.reference_image_id}.jpg`} alt={dog.name} />
           </article>
