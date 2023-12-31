@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 export default function Home() {
 
+
+  const API_URL = "https://api.thedogapi.com/v1/breeds";
+
   const [dogs, setDogs ] = useState([]);
 
   useEffect(() => {
     const fetchDogData = async () => {
       try {
-        const response = await fetch("https://api.thedogapi.com/v1/breeds")
+        const response = await fetch(API_URL)
         const data = await response.json()
         setDogs(data)
         console.log(data)
