@@ -15,11 +15,8 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "@types/react-router-dom": "^5.3.3",
     "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.32",
-    "react-scripts": "latest",
-    "tailwindcss": "^3.3.6"
+    "react-scripts": "latest"
   },
   "browserslist": {
     "production": [
