@@ -1,5 +1,5 @@
 body {
-   color: blue;
+   color: white;
 }
 .navbar {
    background-color: aqua;
@@ -15,7 +15,7 @@ body {
    margin: 1rem;
    padding: 0;
    list-style: none;
-   display: inline;
+   display: block;
    gap: 1rem;
    text-decoration: none;
    font-size: 2rem;

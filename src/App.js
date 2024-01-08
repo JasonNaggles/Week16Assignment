@@ -22,10 +22,14 @@ export default function App() {
         </Container>
         </Navbar>
         <Switch>
-          <Route path="/FriendsDetail"></Route>
+          <Route path="/FriendsDetail">
           <FriendsDetail />
-          <Route path="/"></Route>
+          </Route>
+          
+          <Route path="/">
           <Home />
+          </Route>
+          
         </Switch>
       </div>
   </BrowserRouter>
