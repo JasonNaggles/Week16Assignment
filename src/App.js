@@ -5,7 +5,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Home from "./Components/Home";
-import FriendsDetail from "./Components/FriendsDetail";
+import FriendsDetail from "./Components/FriendsDetailCRUD";
 
 
 export default function App() {
@@ -22,7 +22,7 @@ export default function App() {
         </Container>
         </Navbar>
         <Switch>
-          <Route path="/FriendsDetail">
+          <Route path="/FriendsDetailCRUD">
           <FriendsDetail />
           </Route>
           
