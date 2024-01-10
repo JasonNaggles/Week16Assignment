@@ -17,7 +17,7 @@ export default function App() {
         <Container>
           <Nav>
           <Nav.Link href="/Home">Home</Nav.Link>
-          <Nav.Link href="/FriendsDetailCRUD">FriendsDetail</Nav.Link>
+          <Nav.Link href="/FriendsDetailCRUD">Friends</Nav.Link>
           </Nav>
         </Container>
         </Navbar>
