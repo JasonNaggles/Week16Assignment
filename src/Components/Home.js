@@ -1,7 +1,6 @@
 import React from "react";
 import background from "./Images/friends.jpg";
 import "./Home.css";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 export default function Home() {
     return (
         <div style={{
@@ -26,7 +25,7 @@ export default function Home() {
         }
         
         }>
-            <h1> Welcome to the Friends App</h1>
+            <h1>Welcome to the Friends App</h1>
             </div>
         </div>
     )
