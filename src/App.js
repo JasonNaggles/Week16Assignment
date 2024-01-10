@@ -23,7 +23,7 @@ export default function App() {
         </Navbar>
         <Switch>
           <Route path="/FriendsDetailCRUD">
-          <FriendsDetail />
+          <FriendsDetailCRUD />
           </Route>
           
           <Route path="/">
