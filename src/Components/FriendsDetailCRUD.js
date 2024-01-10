@@ -1,4 +1,6 @@
 import React from "react";
+import { useState, useEffect } from "react";
+
 
 export default function FriendsDetailCRUD() {
  // Define the mock API URL as a constant 
@@ -22,6 +24,7 @@ export default function FriendsDetailCRUD() {
  // Use the useEffect hook to fetch friends data when the component mounts
  useEffect(() => {
    getFriends()
+   console.log(friends)
  }, [])
  
  // Function to delete a friend by ID

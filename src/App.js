@@ -5,7 +5,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Home from "./Components/Home";
-import FriendsDetail from "./Components/FriendsDetailCRUD";
+import FriendsDetailCRUD from "./Components/FriendsDetailCRUD";
 
 
 export default function App() {
@@ -17,7 +17,7 @@ export default function App() {
         <Container>
           <Nav>
           <Nav.Link href="/Home">Home</Nav.Link>
-          <Nav.Link href="/FriendsDetail">FriendsDetail</Nav.Link>
+          <Nav.Link href="/FriendsDetailCRUD">FriendsDetail</Nav.Link>
           </Nav>
         </Container>
         </Navbar>
