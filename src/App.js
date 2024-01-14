@@ -6,6 +6,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Home from "./Components/Home";
 import FriendsDetailCRUD from "./Components/FriendsDetailCRUD";
+import AddFriends from "./Components/AddFriends";
 
 
 export default function App() {
@@ -18,6 +19,7 @@ export default function App() {
           <Nav>
           <Nav.Link href="/Home">Home</Nav.Link>
           <Nav.Link href="/FriendsDetailCRUD">Friends</Nav.Link>
+          <Nav.Link href="/AddFriends">Add Friends</Nav.Link>
           </Nav>
         </Container>
         </Navbar>
@@ -25,8 +27,9 @@ export default function App() {
           <Route path="/FriendsDetailCRUD">
           <FriendsDetailCRUD />
           </Route>
-        
-          
+          <Route path="/AddFriends">
+          <AddFriends />
+          </Route>
           <Route path="/">
           <Home />
           </Route>
