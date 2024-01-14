@@ -1,4 +1,7 @@
 import React from "react";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+
 export default function DeleteFriends({ id, onDelete, getFriends }) {
 
     // MOCK API URL used to update MockAPI
@@ -14,7 +17,8 @@ const MOCK_API_URL = "https://650fc3383ce5d181df5ca880.mockapi.io/Friends";
 
   return (
     <div className="text-center">
-        <button type="button" onClick={deleteFriends} className="btn btn-success p-2 m-2">Delete Friend!</button>
+      
+        <Button type="button" onClick={deleteFriends} className="btn btn-success p-2 m-2">Delete Friend!</Button>
     </div>
   );
 
