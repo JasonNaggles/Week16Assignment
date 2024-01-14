@@ -8,6 +8,7 @@ import Home from "./Components/Home";
 import UpdateFriends from "./Components/UpdateFriends";
 import AddFriends from "./Components/AddFriends";
 import DeleteFriends from "./Components/DeleteFriends";
+import DisplayFriends from "./Components/DisplayFriends";
 
 
 export default function App() {
@@ -22,10 +23,14 @@ export default function App() {
           <Nav.Link href="/UpdateFriends">Update Friends</Nav.Link>
           <Nav.Link href="/AddFriends">Add Friends</Nav.Link>
           <Nav.Link href="/DeleteFriends">Delete Friends</Nav.Link>
+          <Nav.Link href="/DisplayFriends">Display Friends</Nav.Link>
           </Nav>
         </Container>
         </Navbar>
         <Switch>
+          <Route path="/DisplayFriends">
+            <DisplayFriends />
+          </Route>
           <Route path="/UpdateFriends">
           <UpdateFriends />
           </Route>
