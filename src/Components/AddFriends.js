@@ -10,9 +10,7 @@ export default function AddFriends({ getFriends }) {
     // state add state variables and state update function used in add form and set to null
     const [newFirstName, setNewFirstName] = useState('') // Input field for new first name
     const [newLastName, setNewLastName] = useState('') // Input field for new last name
-    const [friends, setFriends] = useState([]) // Array to store friends from the API
-    const [updatedFirstName, setUpdatedFirstName] = useState('') // Input field for updated first name
-    const [updatedLastName, setUpdatedLastName] = useState('') // Input field for updated last name
+
 
     // react bootstrap modal variables
     const [show, setShow] = useState(false);
