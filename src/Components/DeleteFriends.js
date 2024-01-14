@@ -1,5 +1,5 @@
 import React from "react";
-export default function DeleteFriends(id, onDelete, getFriends) {
+export default function DeleteFriends( getFriends ) {
 
     // Function to delete a friend by ID
  function deleteFriends(id) {

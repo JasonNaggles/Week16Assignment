@@ -7,6 +7,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Home from "./Components/Home";
 import FriendsDetailCRUD from "./Components/FriendsDetailCRUD";
 import AddFriends from "./Components/AddFriends";
+import DeleteFriends from "./Components/DeleteFriends";
 
 
 export default function App() {
@@ -29,6 +30,9 @@ export default function App() {
           </Route>
           <Route path="/AddFriends">
           <AddFriends />
+          </Route>
+          <Route path="/DeleteFriends">
+          <DeleteFriends />
           </Route>
           <Route path="/">
           <Home />
