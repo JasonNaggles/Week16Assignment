@@ -5,7 +5,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Home from "./Components/Home";
-import FriendsDetailCRUD from "./Components/FriendsDetailCRUD";
+import UpdateFriends from "./Components/UpdateFriends";
 import AddFriends from "./Components/AddFriends";
 import DeleteFriends from "./Components/DeleteFriends";
 
@@ -19,14 +19,15 @@ export default function App() {
         <Container>
           <Nav>
           <Nav.Link href="/Home">Home</Nav.Link>
-          <Nav.Link href="/FriendsDetailCRUD">Friends</Nav.Link>
+          <Nav.Link href="/UpdateFriends">Update Friends</Nav.Link>
           <Nav.Link href="/AddFriends">Add Friends</Nav.Link>
+          <Nav.Link href="/DeleteFriends">Delete Friends</Nav.Link>
           </Nav>
         </Container>
         </Navbar>
         <Switch>
-          <Route path="/FriendsDetailCRUD">
-          <FriendsDetailCRUD />
+          <Route path="/UpdateFriends">
+          <UpdateFriends />
           </Route>
           <Route path="/AddFriends">
           <AddFriends />
@@ -37,7 +38,6 @@ export default function App() {
           <Route path="/">
           <Home />
           </Route>
-          
         </Switch>
       </div>
   </BrowserRouter>
