@@ -27,26 +27,6 @@ export default function UpdateFriends() {
    console.log(friends)
  }, [])
  
- // Function to delete a friend by ID
- function deleteFriends(id) {
-   fetch(`${MOCK_API_URL}/${id}`, {
-     method: 'DELETE',
-   }).then(() => getFriends()) // Fetch friends data again after deletion
- }
- 
- // Function to add a new friend
- function postNewFriends(e) {
-   e.preventDefault()
-   fetch(MOCK_API_URL, {
-     method: 'POST',
-     headers: {"Content-Type": "application/json"},
-     body: JSON.stringify({
-       firstName: newFirstName,
-       lastName: newLastName,
-     })
-   }).then(() => getFriends()) // Fetch friends data again after adding a new friend
- }
- 
  // Function to update a friend's information
  function updateFriends(e, friendsObject) {
    e.preventDefault()
