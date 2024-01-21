@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import { Link } from "react-router-dom";
 
 export default function AddFriends({ getFriends }) {
 
@@ -57,7 +58,9 @@ export default function AddFriends({ getFriends }) {
                     <input className="m-1" onChange={(e) => setNewLastName(e.target.value)} value={newLastName}></input>
 
                     <div className="text-center">
+                    
                         <Button type="button" onClick={postNewFriends} className="m-1">Add New Friend</Button>
+                        
                     </div>
                 </form>
             </Modal.Body>
