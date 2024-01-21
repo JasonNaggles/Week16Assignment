@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { Link } from "react-router-dom";
+import background from "./Images/friends.jpg";
+
 
 export default function AddFriends({ getFriends }) {
 
@@ -37,6 +38,28 @@ export default function AddFriends({ getFriends }) {
       // react bootstrap modal used to only display form fields if user wants to add a friend
       return (
         <>
+        <div style={{
+      backgroundImage: `url(${background})`,
+      backgroundRepeat: "no-repeat",
+      backgroundSize: 'cover',
+      height: 'auto',
+  }}>
+    <div style={
+            
+            {
+                backgroundColor: 'rgba(255, 255, 255, 0.5)',
+                height: '100vh',
+                textAlign: 'center',
+                paddingTop: '10%',
+                paddingLeft: '10%',
+                paddingRight: '10%',
+                paddingBottom: '10%',
+                fontFamily: 'sans-serif',
+                color: 'black',
+                fontSize: '20px',
+            }
+            
+            }>
         <div className="text-center">
             <Button variant="primary" onClick={handleShow} >
                 Add a new friend!
@@ -72,6 +95,8 @@ export default function AddFriends({ getFriends }) {
                 </div>
             </Modal.Footer>
         </Modal>
+        </div>
+        </div>
         </>
       )
 

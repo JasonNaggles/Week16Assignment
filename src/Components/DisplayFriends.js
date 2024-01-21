@@ -3,6 +3,7 @@ import AddFriends from "./AddFriends";
 import UpdateFriends from "./UpdateFriends";
 import DeleteFriends from "./DeleteFriends";
 
+
 export default function DisplayFriends () {
     // This is my URL for Mock API
     const MOCK_API_URL = "https://650fc3383ce5d181df5ca880.mockapi.io/Friends";
@@ -20,7 +21,6 @@ export default function DisplayFriends () {
   // Use the useEffect hook to fetch friends data when the component mounts
   useEffect(() => {
     getFriends()
-    console.log(friends)
   }, [])
 
   const onUpdate = (id) => {
@@ -34,7 +34,6 @@ export default function DisplayFriends () {
   return (
     <div>
         <div>
-            <h1 className="text-center">Friend's First and Last Name</h1>
             <AddFriends getFriends={getFriends} />
         </div>
         <div className="displayFriend text-center">
@@ -42,10 +41,8 @@ export default function DisplayFriends () {
                 
                 <div className="mapContainer d-inline-flex flex-rowp-2 m-2 justify-content-around" key={index}>
                     <UpdateFriends id ={friends.id} getFriends={getFriends} onUpdate={onUpdate}/>
-                    <DeleteFriends id ={friends.id} getFriends={getFriends} onUpdate={onDelete}/>
+                    <DeleteFriends id ={friends.id} getFriends={getFriends} onDelete={onDelete}/>
                 </div>
-
-            
             ))}
         </div>
     </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import background from "./Images/friends.jpg";
 
 export default function DeleteFriends({ id, onDelete, getFriends }) {
 
@@ -24,19 +24,40 @@ useEffect(() => {
   console.log(friends)
 }, [])
     // Function to delete a friend by ID
- function deleteFriends(e) {
-  e.preventDefault()
-    onDelete(id)
+ function deleteFriends() {
+  onDelete(id)
     fetch(`${MOCK_API_URL}/${id}`, {
       method: 'DELETE',
     }).then(() => getFriends()) // Fetch friends data again after deletion
   }
 
   return (
-    <div className="text-center">
-        <Link to="/DisplayFriends">
+    <div style={{
+      backgroundImage: `url(${background})`,
+      backgroundRepeat: "no-repeat",
+      backgroundSize: 'cover',
+      height: 'auto',
+  }}>
+    <div style={
+            
+            {
+                backgroundColor: 'rgba(255, 255, 255, 0.5)',
+                height: '100vh',
+                textAlign: 'center',
+                paddingTop: '10%',
+                paddingLeft: '10%',
+                paddingRight: '10%',
+                paddingBottom: '10%',
+                fontFamily: 'sans-serif',
+                color: 'black',
+                fontSize: '20px',
+            }
+            
+            }>
+    <div className="text-center"> 
         <Button type="button" onClick={deleteFriends} className="btn btn-success p-2 m-2">Delete Friend!</Button>
-        </Link>
+    </div>
+    </div>
     </div>
   );
 
