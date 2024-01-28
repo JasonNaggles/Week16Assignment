@@ -10,9 +10,6 @@ import AddFriends from "./Components/AddFriends";
 import DeleteFriends from "./Components/DeleteFriends";
 import DisplayFriends from "./Components/DisplayFriends";
 
-
-
-
 export default function App() {
 
   return (
