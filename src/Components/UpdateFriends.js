@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import background from "./Images/friends.jpg";
+import DeleteFriends from "./DeleteFriends";
 
 
 
@@ -78,7 +79,6 @@ export default function UpdateFriends() {
               
               {
                   backgroundColor: 'rgba(255, 255, 255, 0.5)',
-                  height: '100vh',
                   textAlign: 'center',
                   paddingTop: '10%',
                   paddingLeft: '10%',
@@ -112,6 +112,7 @@ export default function UpdateFriends() {
           <label>Update Last Name</label>
           <input onChange={(e) => setUpdatedLastName(e.target.value)}></input>
           <button onClick={(e) => updateFriends(e, friends)}>Update</button>
+          <DeleteFriends id={friends.id} getFriends={getFriends} onDelete={deleteFriends}/>
           </form>
         </div>
        ))}

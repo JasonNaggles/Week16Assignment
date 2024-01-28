@@ -13,7 +13,6 @@ export default function FriendsDetail() {
             
         {
             backgroundColor: 'rgba(255, 255, 255, 0.5)',
-            height: '100vh',
             textAlign: 'center',
             paddingTop: '10%',
             paddingLeft: '10%',

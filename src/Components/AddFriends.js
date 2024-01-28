@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import background from "./Images/friends.jpg";
+
 
 
 export default function AddFriends({ getFriends }) {
@@ -37,23 +37,14 @@ export default function AddFriends({ getFriends }) {
       }
       // react bootstrap modal used to only display form fields if user wants to add a friend
       return (
-        <>
+    
         <div style={{
-      backgroundImage: `url(${background})`,
-      backgroundRepeat: "no-repeat",
-      backgroundSize: 'cover',
+      
       height: 'auto',
   }}>
     <div style={
             
             {
-                backgroundColor: 'rgba(255, 255, 255, 0.5)',
-                height: '100vh',
-                textAlign: 'center',
-                paddingTop: '10%',
-                paddingLeft: '10%',
-                paddingRight: '10%',
-                paddingBottom: '10%',
                 fontFamily: 'sans-serif',
                 color: 'black',
                 fontSize: '20px',
@@ -81,9 +72,7 @@ export default function AddFriends({ getFriends }) {
                     <input className="m-1" onChange={(e) => setNewLastName(e.target.value)} value={newLastName}></input>
 
                     <div className="text-center">
-                    
-                        <Button type="button" onClick={postNewFriends} className="m-1">Add New Friend</Button>
-                        
+                        <Button type="button" onClick={postNewFriends} className="btn btn-success p-2 m-2">Add New Friend</Button>
                     </div>
                 </form>
             </Modal.Body>
@@ -97,7 +86,7 @@ export default function AddFriends({ getFriends }) {
         </Modal>
         </div>
         </div>
-        </>
+        
       )
 
 }

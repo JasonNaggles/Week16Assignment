@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import AddFriends from "./AddFriends";
 import UpdateFriends from "./UpdateFriends";
-import DeleteFriends from "./DeleteFriends";
+
 
 
 export default function DisplayFriends () {
@@ -27,21 +26,14 @@ export default function DisplayFriends () {
         UpdateFriends(id);
   };
 
-  const onDelete = (id) => {
-        DeleteFriends(id);
-  };
 
   return (
     <div>
-        <div>
-            <AddFriends getFriends={getFriends} />
-        </div>
         <div className="displayFriend text-center">
-            {friends.map((friends, index) => (
+            {friends.map((friend, index) => (
                 
                 <div className="mapContainer d-inline-flex flex-rowp-2 m-2 justify-content-around" key={index}>
-                    <UpdateFriends id ={friends.id} getFriends={getFriends} onUpdate={onUpdate}/>
-                    <DeleteFriends id ={friends.id} getFriends={getFriends} onDelete={onDelete}/>
+                    <UpdateFriends id ={friend.id} getFriends={getFriends} onUpdate={onUpdate}/>
                 </div>
             ))}
         </div>
