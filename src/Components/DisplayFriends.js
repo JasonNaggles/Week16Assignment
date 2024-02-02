@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import UpdateFriends from "./UpdateFriends";
+import "./DisplayFriends.css";
 
 
 
@@ -28,6 +29,16 @@ export default function DisplayFriends () {
 
 
   return (
+    <div style={
+              
+      {
+          textAlign: 'center',
+          fontFamily: 'sans-serif',
+          color: 'black',
+          fontSize: '20px',
+      }
+      
+      }>
     <div>
         <div className="displayFriend text-center">
             {friends.map((friend, index) => (
@@ -37,6 +48,7 @@ export default function DisplayFriends () {
                 </div>
             ))}
         </div>
+    </div>
     </div>
   )
 

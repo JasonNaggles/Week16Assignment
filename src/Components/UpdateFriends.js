@@ -69,6 +69,7 @@ export default function UpdateFriends() {
       <div style={
               
               {
+                  textAlign: 'center',
                   fontFamily: 'sans-serif',
                   color: 'black',
                   fontSize: '20px',
@@ -84,19 +85,19 @@ export default function UpdateFriends() {
       <input onChange={(e) => setNewLastName(e.target.value)}></input>
       <button onClick={(e) => postNewFriends(e)}>Submit</button>
     </form>
-      {friends.map((friends, index) => (
+      {friends.map((friend, index) => (
         <div className="friendsContainer" key={index}>
           <div className="charlie">
-            First Name: {friends.firstName} <br></br>
-            Last Name: {friends.lastName} <br></br>
+            First Name: {friend.firstName} <br></br>
+            Last Name: {friend.lastName} <br></br>
           </div>
           <form>
           <label>Update First Name</label>
           <input onChange={(e) => setUpdatedFirstName(e.target.value)}></input>
           <label>Update Last Name</label>
           <input onChange={(e) => setUpdatedLastName(e.target.value)}></input>
-          <button onClick={(e) => updateFriends(e, friends)}>Update</button>
-          <DeleteFriends id={friends.id} getFriends={getFriends} onDelete={deleteFriends}/>
+          <button onClick={(e) => updateFriends(e, friend)}>Update</button>
+          <DeleteFriends id={friend.id} getFriends={getFriends} onDelete={deleteFriends}/>
           </form>
         </div>
        ))}
