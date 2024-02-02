@@ -32,4 +32,11 @@ export default function FriendManage() {
             console.log("Content is already displayed.");
         }
     };
-}
+
+    return (
+        <div>
+          <h1>Friend Management</h1>
+          <button onClick={displayContent}>Display Content</button>
+        </div>
+      );
+    };

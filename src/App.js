@@ -9,6 +9,7 @@ import UpdateFriends from "./Components/UpdateFriends";
 import AddFriends from "./Components/AddFriends";
 import DeleteFriends from "./Components/DeleteFriends";
 import DisplayFriends from "./Components/DisplayFriends";
+import FriendManage from "./Components/FriendManage";
 
 export default function App() {
 
@@ -41,6 +42,9 @@ export default function App() {
           </Route>
           <Route path="/">
           <Home />
+          </Route>
+          <Route path="/FriendManage">
+          <FriendManage />
           </Route>
         </Switch>
       </div>
