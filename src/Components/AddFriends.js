@@ -45,6 +45,7 @@ export default function AddFriends({ getFriends }) {
     <div style={
             
             {
+                textAlign: 'center',
                 fontFamily: 'sans-serif',
                 color: 'black',
                 fontSize: '20px',

@@ -26,7 +26,6 @@ export default function UpdateFriends() {
  // Use the useEffect hook to fetch friends data when the component mounts
  useEffect(() => {
    getFriends()
-   
  }, [])
  
  // Function to delete a friend by ID
@@ -65,12 +64,7 @@ export default function UpdateFriends() {
      }).then(() => getFriends()) // Fetch friends data again after updating a friend
  
    }
-
-
     return (
-      <div style={{
-        height: 'auto',
-    }}>
       <div style={
               
               {
@@ -94,7 +88,6 @@ export default function UpdateFriends() {
           <div>
             firstName: {friends.firstName} <br></br>
             lastName: {friends.lastName} <br></br>
-            <button onClick={() => deleteFriends(friends.id)}>Delete</button>
           </div>
           <form>
           <label>Update First Name</label>
@@ -106,7 +99,6 @@ export default function UpdateFriends() {
           </form>
         </div>
        ))}
-       </div>
        </div>
        </div>
     )

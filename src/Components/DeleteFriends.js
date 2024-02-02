@@ -20,7 +20,6 @@ function getFriends() {
 // Use the useEffect hook to fetch friends data when the component mounts
 useEffect(() => {
   getFriends()
-  console.log(friends)
 }, [])
     // Function to delete a friend by ID
  function deleteFriends() {
@@ -31,10 +30,7 @@ useEffect(() => {
   }
 
   return (
-    <div style={{
-     
-      height: 'auto',
-  }}>
+    
     <div style={
             {
                 textAlign: 'center',
@@ -46,7 +42,6 @@ useEffect(() => {
             }>
     <div className="text-center"> 
     <Button type="button" onClick={deleteFriends} className="btn btn-success p-2 m-2">Delete Friend!</Button>
-    </div>
     </div>
     </div>
   );
