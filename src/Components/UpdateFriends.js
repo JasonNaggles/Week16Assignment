@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import DeleteFriends from "./DeleteFriends";
+import "./UpdateFriends.css"
 
 
 
@@ -85,9 +86,9 @@ export default function UpdateFriends() {
     </form>
       {friends.map((friends, index) => (
         <div className="friendsContainer" key={index}>
-          <div>
-            firstName: {friends.firstName} <br></br>
-            lastName: {friends.lastName} <br></br>
+          <div className="charlie">
+            First Name: {friends.firstName} <br></br>
+            Last Name: {friends.lastName} <br></br>
           </div>
           <form>
           <label>Update First Name</label>
