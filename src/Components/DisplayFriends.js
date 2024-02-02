@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import UpdateFriends from "./UpdateFriends";
-import "./DisplayFriends.css";
+import "./DisplayFriends.css"
+
 
 
 
@@ -24,8 +25,8 @@ export default function DisplayFriends () {
   }, [])
 
   const onUpdate = (id) => {
-        UpdateFriends(id);
-  };
+    UpdateFriends(id);
+};
 
 
   return (
@@ -42,7 +43,6 @@ export default function DisplayFriends () {
     <div>
         <div className="displayFriend text-center">
             {friends.map((friend, index) => (
-                
                 <div className="mapContainer d-inline-flex flex-row p-2 m-2 justify-content-around" key={index}>
                     <UpdateFriends id ={friend.id} getFriends={getFriends} onUpdate={onUpdate}/>
                 </div>
