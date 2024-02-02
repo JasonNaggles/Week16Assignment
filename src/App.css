@@ -1,5 +1,5 @@
-body {
-   background-image: none;
+.hero {
+   background-image: url("Components/Images/friends.jpg");
    background-size: cover;
    background-repeat: no-repeat;
    color: white;

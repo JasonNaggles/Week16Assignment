@@ -14,7 +14,7 @@ export default function App() {
 
   return (
   <BrowserRouter>
-      <div className="App">
+      <div className="hero">
         <Navbar bg="dark" data-bs-theme="dark">
         <Container>
           <Nav>
