@@ -26,7 +26,7 @@ export default function UpdateFriends() {
  // Use the useEffect hook to fetch friends data when the component mounts
  useEffect(() => {
    getFriends()
-   console.log(friends)
+   
  }, [])
  
  // Function to delete a friend by ID

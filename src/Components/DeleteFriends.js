@@ -45,7 +45,7 @@ useEffect(() => {
             
             }>
     <div className="text-center"> 
-        <Button type="button" onClick={deleteFriends} className="btn btn-success p-2 m-2">Delete Friend!</Button>
+    <Button type="button" onClick={deleteFriends} className="btn btn-success p-2 m-2">Delete Friend!</Button>
     </div>
     </div>
     </div>
