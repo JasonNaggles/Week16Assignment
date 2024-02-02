@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import background from "./Images/friends.jpg";
 import DeleteFriends from "./DeleteFriends";
 
 
