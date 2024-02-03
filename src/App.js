@@ -28,24 +28,12 @@ export default function App() {
         </Container>
         </Navbar>
         <Switch>
-          <Route path="/DisplayFriends">
-            <DisplayFriends />
-          </Route>
-          <Route path="/UpdateFriends">
-          <UpdateFriends />
-          </Route>
-          <Route path="/AddFriends">
-          <AddFriends />
-          </Route>
-          <Route path="/DeleteFriends">
-          <DeleteFriends />
-          </Route>
-          <Route path="/">
-          <Home />
-          </Route>
-          <Route path="/FriendManage">
-          <FriendManage />
-          </Route>
+          <Route path="/DisplayFriends" component={DisplayFriends} />
+          <Route path="/UpdateFriends" component={UpdateFriends} />
+          <Route path="/AddFriends" component={AddFriends} />
+          <Route path="/DeleteFriends" component={DeleteFriends} />
+          <Route exact path="/" component={Home} />
+          <Route path="/FriendManage" component={FriendManage} />
         </Switch>
       </div>
   </BrowserRouter>

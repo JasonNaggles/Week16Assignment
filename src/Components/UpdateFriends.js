@@ -5,7 +5,7 @@ import "./UpdateFriends.css"
 
 
 
-export default function UpdateFriends() {
+export default function UpdateFriends () {
  // Define the mock API URL as a constant 
  const MOCK_API_URL = "https://650fc3383ce5d181df5ca880.mockapi.io/Friends";  
   
