@@ -32,7 +32,7 @@ export default function App() {
           <Route path="/UpdateFriends" component={UpdateFriends} />
           <Route path="/AddFriends" component={AddFriends} />
           <Route path="/DeleteFriends" component={DeleteFriends} />
-          <Route exact path="/" component={Home} />
+          <Route path="/" component={Home} />
           <Route path="/FriendManage" component={FriendManage} />
         </Switch>
       </div>
