@@ -40,7 +40,7 @@ export default function DisplayFriends () {
         <div className="displayFriend text-center">
             {friends.map((friend, index) => (
                 <div className="mapContainer d-inline-flex flex-row p-2 m-2 justify-content-around" key={index}>
-                <UpdateFriends id ={friend.id} getFriends={getFriends} onUpdate={UpdateFriends}/>      
+                <UpdateFriends id={friend.id} getFriends={getFriends} onUpdate={UpdateFriends}/>      
                 </div>
             ))}
         </div>
