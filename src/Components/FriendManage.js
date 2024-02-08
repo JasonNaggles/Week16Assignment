@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React from "react";
+import { useState } from "react";
+import Button from "react-bootstrap/Button";
 
 export default function FriendManage() {
 
@@ -7,7 +9,7 @@ export default function FriendManage() {
     const displayContent = () => {
         if (!contentDisplayed) {
 
-            console.log("Post new friends form");
+      console.log("Post new friends form");
       console.log("First Name");
       console.log("Last Name");
       console.log("Submit");
@@ -34,9 +36,9 @@ export default function FriendManage() {
     };
 
     return (
-        <div>
+        <div className="text-center">
           <h1>Friend Management</h1>
-          <button onClick={displayContent}>Display Content</button>
+          <Button type="button" onClick={displayContent} className="btn btn-success p-2 m-2">Display Content</Button>
         </div>
       );
     };

@@ -24,6 +24,7 @@ export default function App() {
           <Nav.Link href="/AddFriends">Add Friends</Nav.Link>
           <Nav.Link href="/DeleteFriends">Delete Friends</Nav.Link>
           <Nav.Link href="/DisplayFriends">Display Friends</Nav.Link>
+          <Nav.Link href="FriendManage">FriendManage</Nav.Link>
           </Nav>
         </Container>
         </Navbar>
