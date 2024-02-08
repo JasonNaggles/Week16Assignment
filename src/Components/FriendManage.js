@@ -40,5 +40,5 @@ export default function FriendManage() {
           <h1>Friend Management</h1>
           <Button type="button" onClick={displayContent} className="btn btn-success p-2 m-2">Display Content</Button>
         </div>
-      );
-    };
+      )
+    }
