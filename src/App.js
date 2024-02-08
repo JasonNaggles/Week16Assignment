@@ -16,7 +16,7 @@ export default function App() {
   return (
   <BrowserRouter>
       <div className="hero">
-        <Navbar bg="dark" data-bs-theme="dark">
+        <Navbar>
         <Container>
           <Nav>
           <Nav.Link href="/Home">Home</Nav.Link>
