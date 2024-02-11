@@ -52,7 +52,7 @@ export default function AddFriends({ getFriends }) {
             }>
         <div className="text-center">
             <>
-            <Button variant="primary" onClick={handleShow} >
+            <Button variant="primary p-2 m-2" onClick={handleShow} >
                 Add a new friend!
             </Button>
             </>

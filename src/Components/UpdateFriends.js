@@ -79,7 +79,7 @@ export default function UpdateFriends () {
               }>
         <div className="App">
     <form>
-      <h3>Post new friends form</h3>
+      <h3>Post New Friends Form</h3>
       <label>First Name</label>
       <input onChange={(e) => setNewFirstName(e.target.value)}></input>
       <label>Last Name</label>

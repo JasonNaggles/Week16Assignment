@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css"
+import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -20,12 +21,12 @@ export default function App() {
         <Navbar>
         <Container>
           <Nav>
-          <Nav.Link href="/Home">Home</Nav.Link>
-          <Nav.Link href="/UpdateFriends">Update Friends</Nav.Link>
-          <Nav.Link href="/AddFriends">Add Friends</Nav.Link>
-          <Nav.Link href="/DeleteFriends">Delete Friends</Nav.Link>
-          <Nav.Link href="/DisplayFriends">Display Friends</Nav.Link>
-          <Nav.Link href="FriendManage">FriendManage</Nav.Link>
+          <Button variant="primary"><Nav.Link href="/Home"><h5 className="linkText">Home</h5></Nav.Link></Button>
+          <Button variant="primary"><Nav.Link href="/UpdateFriends"><h5 className="linkText">Update Friends</h5></Nav.Link></Button>
+          <Button variant="primary"><Nav.Link href="/AddFriends"><h5 className="linkText">Add Friends</h5></Nav.Link></Button>
+          <Button variant="primary"><Nav.Link href="/DeleteFriends"><h5 className="linkText">Delete Friends</h5></Nav.Link></Button>
+          <Button variant="primary"><Nav.Link href="/DisplayFriends"><h5 className="linkText">Display Friends</h5></Nav.Link></Button>
+          <Button variant="primary"><Nav.Link href="FriendManage"><h5 className="linkText">FriendManage</h5></Nav.Link></Button>
           </Nav>
         </Container>
         </Navbar>

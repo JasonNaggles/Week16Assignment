@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 import { useState, useEffect } from "react";
 
 export default function DeleteFriends({ id, onDelete, getFriends }) {
@@ -8,6 +9,13 @@ export default function DeleteFriends({ id, onDelete, getFriends }) {
 const MOCK_API_URL = "https://650fc3383ce5d181df5ca880.mockapi.io/Friends";
 
 const [friends, setFriends] = useState([]) // Array to store friends from the API
+const [deleteFirstName, setDeleteFirstName] = useState('') // Input field for new first name
+const [deleteLastName, setDeleteLastName] = useState('') // Input field for new last name
+
+// react bootstrap modal variables
+const [show, setShow] = useState(false);
+const handleClose = () => setShow(false);
+const handleShow = () => setShow(true);
 
 // Function to fetch friends data from the API
  
@@ -40,10 +48,35 @@ useEffect(() => {
             }
             
             }>
-    <div className="text-center"> 
-    <Button type="button" onClick={deleteFriends} className="btn btn-success p-2 m-2">Delete Friend!</Button>
+    <div className="text-center">
+      <>
+      <Button variant="success p-2 m-2" onClick={handleShow} >
+                Delete Friend!
+            </Button>
+      </>
     </div>
+    <Modal show={show} onHide={handleClose} >
+            <Modal.Header>
+                <div className="flex flex-row text-center">
+
+                </div>
+            </Modal.Header>
+            <Modal.Body>
+                <form>
+                    <label>Delete First Name</label>
+                    <input className="m-1" onChange={(e) => setDeleteFirstName(e.target.value)} value={deleteFirstName}></input>
+
+                    <label>Delete Last Name</label>
+                    <input className="m-1" onChange={(e) => setDeleteLastName(e.target.value)} value={deleteLastName}></input>
+
+                    <div className="text-center">
+                        <Button type="button" onClick={deleteFriends} variant="success p-2 m-2">Delete Friend!</Button>
+                    </div>
+                </form>
+            </Modal.Body>
+        </Modal>
     </div>
+    
   );
 
 }
