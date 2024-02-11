@@ -51,9 +51,11 @@ export default function AddFriends({ getFriends }) {
             
             }>
         <div className="text-center">
+            <>
             <Button variant="primary" onClick={handleShow} >
                 Add a new friend!
             </Button>
+            </>
         </div>
 
         <Modal show={show} onHide={handleClose} >

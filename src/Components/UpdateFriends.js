@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import DeleteFriends from "./DeleteFriends";
+import Button from "react-bootstrap/Button";
 import "./UpdateFriends.css"
 
 
@@ -83,7 +84,7 @@ export default function UpdateFriends () {
       <input onChange={(e) => setNewFirstName(e.target.value)}></input>
       <label>Last Name</label>
       <input onChange={(e) => setNewLastName(e.target.value)}></input>
-      <button onClick={(e) => postNewFriends(e)}>Submit</button>
+      <Button variant="primary" onClick={(e) => postNewFriends(e)}>Submit</Button>
     </form>
       {friends.map((friend, index) => (
         <div className="friendsContainer" key={index}>
@@ -96,7 +97,7 @@ export default function UpdateFriends () {
           <input onChange={(e) => setUpdatedFirstName(e.target.value)}></input>
           <label>Update Last Name</label>
           <input onChange={(e) => setUpdatedLastName(e.target.value)}></input>
-          <button onClick={(e) => updateFriends(e, friend)}>Update</button>
+          <Button variant="warning" onClick={(e) => updateFriends(e, friend)}>Update</Button>
           <DeleteFriends id={friend.id} getFriends={getFriends} onDelete={deleteFriends}/>
           </form>
         </div>

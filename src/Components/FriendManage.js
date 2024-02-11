@@ -38,7 +38,7 @@ export default function FriendManage() {
     return (
         <div className="text-center">
           <h1>Friend Management</h1>
-          <Button type="button" onClick={displayContent} className="btn btn-success p-2 m-2">Display Content</Button>
+          <Button type="button" onClick={displayContent} variant="success p-2 m-2">Display Content</Button>
         </div>
       )
     }
