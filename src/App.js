@@ -11,7 +11,7 @@ import UpdateFriends from "./Components/UpdateFriends";
 import AddFriends from "./Components/AddFriends";
 import DeleteFriends from "./Components/DeleteFriends";
 import DisplayFriends from "./Components/DisplayFriends";
-import FriendManage from "./Components/FriendManage";
+
 
 export default function App() {
 
@@ -26,7 +26,6 @@ export default function App() {
           <Button variant="primary"><Nav.Link href="/AddFriends"><h5 className="linkText">Add Friends</h5></Nav.Link></Button>
           <Button variant="primary"><Nav.Link href="/DeleteFriends"><h5 className="linkText">Delete Friends</h5></Nav.Link></Button>
           <Button variant="primary"><Nav.Link href="/DisplayFriends"><h5 className="linkText">Display Friends</h5></Nav.Link></Button>
-          <Button variant="primary"><Nav.Link href="FriendManage"><h5 className="linkText">FriendManage</h5></Nav.Link></Button>
           </Nav>
         </Container>
         </Navbar>
@@ -36,7 +35,6 @@ export default function App() {
           <Route path="/AddFriends" component={AddFriends} />
           <Route path="/DeleteFriends" component={DeleteFriends} />
           <Route path="/" component={Home} />
-          <Route path="/FriendManage" component={FriendManage} />
         </Switch>
       </div>
   </BrowserRouter>
