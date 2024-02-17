@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-export default function DeleteFriends({ id, onDelete, getFriends }) {
+export default function DeleteFriends({ id, getFriends }) {
 const history = useHistory();
 
 function handleClick() {
@@ -13,8 +13,8 @@ function handleClick() {
 const MOCK_API_URL = "https://650fc3383ce5d181df5ca880.mockapi.io/Friends";
 
 const [friends, setFriends] = useState([]) // Array to store friends from the API
-const [deleteFirstName, setDeleteFirstName] = useState('') // Input field for new first name
-const [deleteLastName, setDeleteLastName] = useState('') // Input field for new last name
+const [deleteFirstName, setDeleteFirstName] = useState('') // Input field for delete first name
+const [deleteLastName, setDeleteLastName] = useState('') // Input field for delete last name
 
 // react bootstrap modal variables
 const [show, setShow] = useState(false);
@@ -35,9 +35,7 @@ useEffect(() => {
 }, [])
 
     // Function to delete a friend by ID
- function deleteFriends(e, id) {
-  e.preventDefault()
-  onDelete(id)
+ function deleteFriends(id) {
     fetch(`${MOCK_API_URL}/${id}`, {
       method: 'DELETE',
     }).then(() => getFriends()) // Fetch friends data again after deletion
