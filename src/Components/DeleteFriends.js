@@ -21,6 +21,12 @@ const [show, setShow] = useState(false);
 const handleClose = () => setShow(false);
 const handleShow = () => setShow(true);
 
+
+
+// Use the useEffect hook to fetch friends data when the component mounts
+useEffect(() => {
+  getFriends()
+}, [])
 // Function to fetch friends data from the API
  
 function getFriends() {
@@ -28,12 +34,6 @@ function getFriends() {
   .then(data => data.json())
   .then(data => setFriends(data)) // Update the friends state with data from the API
 }
-
-// Use the useEffect hook to fetch friends data when the component mounts
-useEffect(() => {
-  getFriends()
-}, [])
-
     // Function to delete a friend by ID
  function deleteFriends(id) {
     fetch(`${MOCK_API_URL}/${id}`, {
