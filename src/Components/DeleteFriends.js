@@ -60,8 +60,8 @@ function getFriends() {
     <div className="text-center">
       <>
       <Button variant="success p-2 m-2" onClick={handleShow} >
-                Delete Friend!
-            </Button>
+          Delete Friend!
+      </Button>
       </>
     </div>
     <Modal show={show} onHide={handleClose} >
@@ -74,14 +74,18 @@ function getFriends() {
                 <form>
                     <label>Delete First Name</label>
                     <input className="m-1" onChange={(e) => setDeleteFirstName(e.target.value)} value={deleteFirstName}></input>
+
                     <label>Delete Last Name</label>
                     <input className="m-1" onChange={(e) => setDeleteLastName(e.target.value)} value={deleteLastName}></input>
+
                     <div className="text-center">
                         <Button type="button" onClick={deleteFriends} variant="success p-2 m-2">Delete Friend!</Button>
-                        <Button type="button" onClick={handleClick}>Go Back To Display Friends</Button>
                     </div>
                 </form>
             </Modal.Body>
+            <Modal.Footer>
+              <Button type="button" onClick={handleClick}>Go Back To Display Friends</Button>
+            </Modal.Footer>
         </Modal>
     </div>
     
