@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-export default function DeleteFriends({ id, getFriends }) {
+export default function DeleteFriends({ getFriends }) {
 const history = useHistory();
 
 function handleClick() {
