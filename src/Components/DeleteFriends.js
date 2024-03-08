@@ -33,14 +33,12 @@ useEffect(() => {
     function deleteFriends(id) {
       fetch(`${MOCK_API_URL}/${id}`, {
         method: 'DELETE',
-      }).then((result) => result.json()
-        .then((response) => console.warn(response),
-        getFriends()), // Fetch friends data again after deletion
+      }).then(() => getFriends()), // Fetch friends data again after deletion
   
       //set form fields to blank after deletion
       setDeleteFirstName(''),
       setDeleteLastName('')
-   )}
+}
   
     console.log(friends);
 // Function to fetch friends data from the API
