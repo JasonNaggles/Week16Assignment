@@ -35,7 +35,7 @@ function getFriends() {
   .then(data => setFriends(data)) // Update the friends state with data from the API
 }
     // Function to delete a friend by ID
- function deleteFriends() {
+ function deleteFriends(id) {
     fetch(`${MOCK_API_URL}/${id}`, {
       method: 'DELETE',
     }).then((result) => result.json()
