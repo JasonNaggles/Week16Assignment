@@ -38,12 +38,14 @@ function getFriends() {
  function deleteFriends() {
     fetch(`${MOCK_API_URL}/${id}`, {
       method: 'DELETE',
-    }).then(() => getFriends()) // Fetch friends data again after deletion
+    }).then((result) => result.json()
+      .then((response) => console.warn(response),
+      getFriends()), // Fetch friends data again after deletion
 
     //set form fields to blank after deletion
-    setDeleteFirstName('')
+    setDeleteFirstName(''),
     setDeleteLastName('')
-  }
+ )}
 
   console.log(friends);
   return (
@@ -91,4 +93,4 @@ function getFriends() {
     
   );
 
-}
+};
