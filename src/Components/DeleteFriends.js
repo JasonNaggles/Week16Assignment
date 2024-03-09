@@ -4,7 +4,7 @@ import Modal from "react-bootstrap/Modal";
 
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-export default function DeleteFriends({ getFriends }) {
+export default function DeleteFriends({ id, getFriends }) {
 const history = useHistory();
 
 function handleClick() {
@@ -30,7 +30,7 @@ useEffect(() => {
 }, [])
 
     // Function to delete a friend by ID
-    function deleteFriends(id) {
+    function deleteFriends() {
       fetch(`${MOCK_API_URL}/${id}`, {
         method: 'DELETE',
       }).then(() => getFriends()), // Fetch friends data again after deletion
