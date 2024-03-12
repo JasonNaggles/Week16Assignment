@@ -40,7 +40,7 @@ useEffect(() => {
       setDeleteLastName('')
     }
   
-    console.log(id)
+    console.log(friends)
 // Function to fetch friends data from the API
  
 function getFriends() {
