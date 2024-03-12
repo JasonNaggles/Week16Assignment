@@ -30,7 +30,7 @@ useEffect(() => {
 }, [])
 
     // Function to delete a friend by ID
-    function deleteFriends() {
+    function deleteFriends(id) {
       fetch(`${MOCK_API_URL}/${id}`, {
         method: 'DELETE',
       }).then(() => getFriends()), // Fetch friends data again after deletion
@@ -40,10 +40,11 @@ useEffect(() => {
       setDeleteLastName('')
 }
   
-    console.log(friends);
+    
 // Function to fetch friends data from the API
  
 function getFriends() {
+  console.log(id);
   fetch(MOCK_API_URL)
   .then(data => data.json())
   .then(data => setFriends(data)) // Update the friends state with data from the API
