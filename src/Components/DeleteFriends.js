@@ -30,7 +30,8 @@ useEffect(() => {
 }, [])
 
     // Function to delete a friend by ID
-    function deleteFriends(id) {
+    function deleteFriends(e, id) {
+      e.preventDefault();
       fetch(`${MOCK_API_URL}/${id}`, {
       method: 'DELETE', 
        }).then(() =>  getFriends()) // Fetch friends data again after deletion
@@ -70,7 +71,7 @@ function getFriends() {
     <Modal show={show} onHide={handleClose} >
             <Modal.Header>
                 <div className="flex flex-row text-center">
-
+                
                 </div>
             </Modal.Header>
             <Modal.Body>
