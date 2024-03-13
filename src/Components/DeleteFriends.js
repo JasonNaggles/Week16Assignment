@@ -14,8 +14,6 @@ function handleClick() {
 const MOCK_API_URL = "https://650fc3383ce5d181df5ca880.mockapi.io/Friends";
 
 const [friends, setFriends] = useState([]) // Array to store friends from the API
-const [deleteFirstName, setDeleteFirstName] = useState('') // Input field for delete first name
-const [deleteLastName, setDeleteLastName] = useState('') // Input field for delete last name
 
 // react bootstrap modal variables
 const [show, setShow] = useState(false);
@@ -30,15 +28,10 @@ useEffect(() => {
 }, [])
 
     // Function to delete a friend by ID
-    function deleteFriends(e, id) {
-      e.preventDefault();
+    function deleteFriends (id) {
       fetch(`${MOCK_API_URL}/${id}`, {
       method: 'DELETE', 
        }).then(() =>  getFriends()) // Fetch friends data again after deletion
-      
-      //set form fields to blank after deletion
-      setDeleteFirstName(''),
-      setDeleteLastName('')
     }
   
     console.log(friends)
@@ -75,17 +68,16 @@ function getFriends() {
                 </div>
             </Modal.Header>
             <Modal.Body>
-                <form>
-                    <label>Delete First Name</label>
-                    <input className="m-1" onChange={(e) => setDeleteFirstName(e.target.value)} value={deleteFirstName}></input>
-
-                    <label>Delete Last Name</label>
-                    <input className="m-1" onChange={(e) => setDeleteLastName(e.target.value)} value={deleteLastName}></input>
-
-                    <div className="text-center">
-                        <Button type="button" onClick={deleteFriends} variant="success p-2 m-2">Delete Friend!</Button>
+                {friends.map((friends, index) => (
+                  <div className="friendsContainer" key={index}>
+                    <div>
+                      firstName: {friends.firstName} <br></br>
+                      lastName: {friends.lastName} <br></br>
+                      <Button type="button" onClick={() => deleteFriends(friends.id)} variant="success p-2 m-2">Delete Friend!</Button>
                     </div>
-                </form>
+                  </div>
+                ))}
+                  
             </Modal.Body>
             <Modal.Footer>
               <Button type="button" onClick={handleClick}>Go Back To Display Friends</Button>

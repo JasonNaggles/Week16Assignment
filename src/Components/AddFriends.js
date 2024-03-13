@@ -10,7 +10,7 @@ export default function AddFriends({ getFriends }) {
     // state add state variables and state update function used in add form and set to null
     const [newFirstName, setNewFirstName] = useState('') // Input field for new first name
     const [newLastName, setNewLastName] = useState('') // Input field for new last name
-
+    const [friends, setFriends] = useState([]) // Array to store friends from the API
 
     // react bootstrap modal variables
     const [show, setShow] = useState(false);
@@ -19,7 +19,8 @@ export default function AddFriends({ getFriends }) {
 
     //when add button is clicked, the new object is posted as a string to MockAPI
     function postNewFriends(e) {
-        e.preventDefault()
+        
+        e.preventDefault();
         fetch(MOCK_API_URL, {
           method: 'POST',
           headers: {"Content-Type": "application/json"},
@@ -28,10 +29,18 @@ export default function AddFriends({ getFriends }) {
             lastName: newLastName,
           })
         }).then(() => getFriends()) // Fetch friends data again after adding a new friend
-
+        console.log(friends);
     // set form fields to blank after update
         setNewFirstName('')
         setNewLastName('')
+      }
+
+      
+
+      function getFriends() {
+        fetch(MOCK_API_URL)
+        .then(data => data.json())
+        .then(data => setFriends(data)) // Update the friends state with data from the API
       }
       // react bootstrap modal used to only display form fields if user wants to add a friend
       return (
@@ -73,7 +82,7 @@ export default function AddFriends({ getFriends }) {
                     <input className="m-1" onChange={(e) => setNewLastName(e.target.value)} value={newLastName}></input>
 
                     <div className="text-center">
-                        <Button type="button" onClick={postNewFriends} className="btn btn-success p-2 m-2">Add New Friend</Button>
+                        <Button type="button" onClick={(e) => postNewFriends(e)} className="btn btn-success p-2 m-2">Add New Friend</Button>
                     </div>
                 </form>
             </Modal.Body>
