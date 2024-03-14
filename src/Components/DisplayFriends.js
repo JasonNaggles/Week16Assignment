@@ -22,42 +22,42 @@ export default function DisplayFriends () {
   }, [])
 
   // Function to delete a friend by ID
-  function deleteFriends(id) {
-    fetch(`${MOCK_API_URL}/${id}`, {
+  function deleteFriends(id) { // Define function to delete a friend by ID
+    fetch(`${MOCK_API_URL}/${id}`, { // Fetch the specific friend by ID
       method: "DELETE",
     }).then(() => getFriends()); // Fetch friends data again after deletion
   }
 
   // Function to add a new friend
-  function postNewFriends(e) {
-    e.preventDefault();
-    fetch(MOCK_API_URL, {
+  function postNewFriends(e) { // Define function to add new friend
+    e.preventDefault(); // Prevent default form submission behavior
+    fetch(MOCK_API_URL, { // Fetch data from the mock API URL
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        firstName: newFirstName,
-        lastName: newLastName,
+      headers: { "Content-Type": "application/json" }, // Set headers
+      body: JSON.stringify({ // Convert data to JSON format
+        firstName: newFirstName, // Get new friend's first name
+        lastName: newLastName, // Get new friend's last name
       }),
     }).then(() => getFriends()); // Fetch friends data again after adding a new friend
   }
 
   // Function to update a friend's information
-  function updateFriends(e, friendsObject) {
-    e.preventDefault();
-    let updatedFriendsObject = {
-      firstName: updatedFirstName,
-      lastName: updatedLastName,
+  function updateFriends(e, friendsObject) { // Define function to update a friend's information
+    e.preventDefault(); // Prevent default form submission behavior
+    let updatedFriendsObject = { // Create updated friend object
+      firstName: updatedFirstName, // Get updated first name
+      lastName: updatedLastName, // Get updated last name
     };
-    fetch(`${MOCK_API_URL}/${friendsObject.id}`, {
+    fetch(`${MOCK_API_URL}/${friendsObject.id}`, { // Fetch a specific friend by ID
       method: "PUT",
-      body: JSON.stringify(updatedFriendsObject),
+      body: JSON.stringify(updatedFriendsObject), // Covert data to JSON format
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json", // Set headers
       },
     }).then(() => getFriends()); // Fetch friends data again after updating a friend
   }
 
-  console.log(friends);
+  console.log(friends); // Log friends data to console
 
   return (
     <div style={
@@ -74,10 +74,10 @@ export default function DisplayFriends () {
         <div className="displayFriend text-center">
               <div className="mapContainer d-inline-flex flex-row p-2 m-2 justify-content-around">
               <UpdateFriends friends={friends}
-              getFriends={getFriends}
-              deleteFriends={deleteFriends}
-              postNewFriends={postNewFriends}
-              updateFriends={updateFriends}
+              getFriends={getFriends} // Pass getFriends as prop
+              deleteFriends={deleteFriends} // Pass deleteFriends as prop
+              postNewFriends={postNewFriends} // Pass postNewFriends as prop
+              updateFriends={updateFriends} // Pass updateFriends as prop
               />      
               </div>
             
