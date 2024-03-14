@@ -34,7 +34,7 @@ useEffect(() => {
        }).then(() =>  getFriends()) // Fetch friends data again after deletion
     }
   
-    console.log(friends)
+    console.log(friends) // Log friends data to console
 // Function to fetch friends data from the API
  
 function getFriends() {
