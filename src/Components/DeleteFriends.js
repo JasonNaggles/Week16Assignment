@@ -1,14 +1,14 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button"; // Import Button component from react-bootstrap library
+import Modal from "react-bootstrap/Modal";   // Import Modal component from react-bootstrap library
+import { useState, useEffect } from "react"; // Import useState and useEffect hooks from React
+import { useHistory } from "react-router-dom"; // Import useHistory from react-router-dom for navigation
+export default function DeleteFriends({ id, getFriends }) { // Define DeleteFriends component with props id and getFriends
+const history = useHistory(); // Get history object from useHistory hook
 
-import { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
-export default function DeleteFriends({ id, getFriends }) {
-const history = useHistory();
 
-function handleClick() {
-  history.push("displayfriends");
+function handleClick() { // Define handleClick function for navigation
+  history.push("displayfriends"); // Navigate to "displayfriends" route
 }
     // MOCK API URL used to update MockAPI
 const MOCK_API_URL = "https://650fc3383ce5d181df5ca880.mockapi.io/Friends";
@@ -16,15 +16,15 @@ const MOCK_API_URL = "https://650fc3383ce5d181df5ca880.mockapi.io/Friends";
 const [friends, setFriends] = useState([]) // Array to store friends from the API
 
 // react bootstrap modal variables
-const [show, setShow] = useState(false);
-const handleClose = () => setShow(false);
-const handleShow = () => setShow(true);
+const [show, setShow] = useState(false); // Initialize state variable show for modal visibility
+const handleClose = () => setShow(false); // Function to close modal
+const handleShow = () => setShow(true); // Function to show modal
 
 
 
 // Use the useEffect hook to fetch friends data when the component mounts
-useEffect(() => {
-  getFriends()
+useEffect(() => { 
+  getFriends() // Fetch friends data
 }, [])
 
     // Function to delete a friend by ID
@@ -68,12 +68,12 @@ function getFriends() {
                 </div>
             </Modal.Header>
             <Modal.Body>
-                {friends.map((friends, index) => (
-                  <div className="friendsContainer" key={index}>
+                {friends.map((friends, index) => ( // Map through friends array
+                  <div className="friendsContainer" key={index}> {/* Container for each friend */}
                     <div>
                       firstName: {friends.firstName} <br></br>
                       lastName: {friends.lastName} <br></br>
-                      <Button type="button" onClick={() => deleteFriends(friends.id)} variant="success p-2 m-2">Delete Friend!</Button>
+                      <Button type="button" onClick={() => deleteFriends(friends.id)} variant="success p-2 m-2">Delete Friend!</Button> {/* Button to delete friend */}
                     </div>
                   </div>
                 ))}
