@@ -10,15 +10,15 @@ export default function DisplayFriends () {
 
     // Function to fetch friends data from the API
  
- function getFriends() {
-    fetch(MOCK_API_URL)
-    .then(data => data.json())
+ function getFriends() { // Define function to fetch friends
+    fetch(MOCK_API_URL) // Fetch data from the mock API URL
+    .then(data => data.json()) // Convert response data to JSON format
     .then(data => setFriends(data)) // Update the friends state with data from the API
   }
   
   // Use the useEffect hook to fetch friends data when the component mounts
-  useEffect(() => {
-    getFriends()
+  useEffect(() => { // useEffect hook to execute when component mounts
+    getFriends() // Call getFriends function to fetch friends data
   }, [])
 
   // Function to delete a friend by ID
